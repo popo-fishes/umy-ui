@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--引入表格样式-->
+    <link rel="stylesheet" href="../lib/theme-chalk/index.css">
+    <title>cdn方式测试，这个无作用的页面，拿来测试打包后的pl-table能不能用</title>
+    <style>
+        body, html {
+            margin: 0;padding: 0;width: 100%;height: 100%;overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p style="color: red">我是Y轴虚拟</p>
+    <u-table :data="data.tableData"
+              ref="plTable"
+              height="300"
+              big-data-checkbox
+              fixed-columns-roll
+              show-summary
+              :total-option="[{ label: '地址' }]"
+              use-virtual
+              :row-height="50">
+        <template slot="empty">
+            没有查询到符合条件的记录
+        </template>
+        <!--show-overflow-tooltip属性代表超出则内容部分给出提示框-->
+        <u-table-column
+                v-for="item in columns"
+                :key="item.id"
+                :type="item.type"
+                :resizable="item.resizable"
+                :show-overflow-tooltip="item.showOverflowTooltip"
+                :prop="item.prop"
+                :label="item.label"
+                :fixed="item.fixed"
+                :width="item.width"/>
+    </u-table>
+    <p style="margin-top: 20px;color: red">我是X + Y轴同时虚拟</p>
+    <ux-grid :data="data.tableData"  height="300">
+        <ux-table-column
+                v-for="item in columns2"
+                :key="item.id"
+                :resizable="item.resizable"
+                :field="item.prop"
+                :title="item.label"
+                :fixed="item.fixed"
+                :width="item.width"/>
+    </ux-grid>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="../lib/index.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                columns: [
+                    {type: 'selection', width : 55},
+                    {prop: 'date', label: '日期', width: 120},
+                    {prop: 'address', label: '地址', width: 100, showOverflowTooltip: true},
+                    {prop: 'address', label: '噜噜噜', width: 230, showOverflowTooltip: true},
+                    {prop: 'address', label: '娃哈哈', width: 100, showOverflowTooltip: true},
+                    {prop: 'address', label: '地址', width: 100, showOverflowTooltip: true},
+                    {prop: 'address', label: '挖挖掘机挖掘机挖掘机掘机', width: 100},
+                    {prop: 'address', label: '娃哈哈', width: 100, showOverflowTooltip: true},
+                    {prop: 'address', label: '娃哈哈', width: 100, showOverflowTooltip: true},
+                    {prop: 'address', label: '噜噜噜', width: 230, showOverflowTooltip: true},
+                    {prop: 'address', label: '娃哈哈', width: 100, showOverflowTooltip: true},
+                    {prop: 'address', label: '地址', width: 100, showOverflowTooltip: true},
+                    {prop: 'address', label: '挖挖掘机挖掘机挖掘机掘机', width: 100},
+                    {prop: 'address', label: '娃哈哈', width: 100, showOverflowTooltip: true},
+                    {prop: 'address', label: '娃哈哈', width: 100, showOverflowTooltip: true},
+                    {prop: 'address', label: '噜噜噜', width: 230, showOverflowTooltip: true},
+                    {prop: 'address', label: '娃哈哈', width: 100, showOverflowTooltip: true}
+                ],
+                columns2: Array.from({ length: 500 }, (_, idx) => ({
+                    prop: 'address', label: '地址' + idx, width: 200, showOverflow: true, sortable: true, fixed: ''
+                })),
+                data: {
+                    tableData:Array.from({ length: 5000 }, (_, idx) => ({
+                        id: idx + 1,
+                        date: '2016-05-03',
+                        name: 1,
+                        ab: '欢迎使用pl-table',
+                        address: 1 + idx
+                    }))
+                }
+            }
+        }
+    })
+</script>
+</html>

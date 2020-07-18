@@ -1,0 +1,11 @@
+@import "../common/var";
+@import "config";
+/* BEM
+ -------------------------- */
+@mixin b($block) {
+  $B: $namespace+'-'+$block !global;
+
+  .#{$B} {
+    @content;
+  }
+}

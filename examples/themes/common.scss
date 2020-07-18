@@ -1,0 +1,35 @@
+@charset "utf-8";
+// 这里只能写全局变量
+$dh-color: #409eff; // 主题颜色
+$dh-bottom-color: #fff; // 页面底色
+$dh-title-font-size: 14px; // 主题颜色标题字体
+$table-header-color: #f2f5fa; //表头的颜色
+$table-header-font-color: #909399; // 表头字体颜色
+$table-row-hover: rgb(248, 249, 253); // 表格hover颜色
+// 颜色
+$color555: #555;
+$color999: #999;
+$color777: #777;
+$colorf2f2f2: #f2f2f2;
+$coloreee: #eee;
+$color333: #333;
+$color666: #666;
+$colorccc: #ccc;
+$colorc7c9cc: #c7c9cc;
+$color75B52F: #75B52F;
+$colorF5F7FC: #F5F7FC;
+
+$box-shadow-color: rgba(0, 0, 0, .1); // 边框阴影色
+$box-bgcolor: #fff; // 盒子背景色
+// 字体大小
+$font-size10: 10px;
+$font-size12: 12px;
+$font-size13: 13px;
+$font-size14: 14px;
+$font-size15: 15px;
+$font-size16: 16px;
+$font-size18: 18px;
+$font-size20: 20px;
+$font-size24: 24px;
+// 输入框等的高度
+$default-height: 32px;

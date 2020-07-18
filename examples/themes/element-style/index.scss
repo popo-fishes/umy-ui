@@ -1,0 +1,24 @@
+.card-box {
+  .el-input__icon {
+    line-height: $default-height !important;
+  }
+  // 高度样式修改
+  .el-input .is-disabled{
+    height: $default-height!important;
+    line-height: $default-height!important;
+  }
+  .el-input__inner{
+    height: $default-height!important;
+    line-height: $default-height!important;
+  }
+  .el-input--mini .el-input__inner, .el-pagination__editor.el-input .el-input__inner {
+    height: 28px!important;
+    line-height: 28px!important;
+  }
+  .el-input-number {
+    line-height: 30px!important;
+  }
+  .el-button {
+    padding: 8px 12px !important;
+  }
+}

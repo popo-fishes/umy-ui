@@ -1,0 +1,116 @@
+.page-component .content>h3 {
+  margin: 10px 0 20px;
+}
+.page-component p {
+  font-size: 14px;
+  color: #5e6d82;
+  line-height: 2em;
+}
+.page-component .tip {
+  padding: 8px 16px;
+  background-color: #ecf8ff;
+  border-radius: 4px;
+  border-left: 5px solid #50bfff;
+  margin: 20px 0;
+}
+.u-component-tpl {
+  h3 {
+    margin-top: 0 !important;
+  }
+}
+template {
+  display: block;
+  margin-top: 20px;
+}
+.page-component__content {
+  p {
+    margin: .5em 0;
+  }
+}
+.page-component {
+  .fenge {
+    margin: 20px 0;
+    font-size: 20px;
+  }
+  // 自定义md api组件的样式
+  h3 {
+    a{
+      display: none;
+    }
+  }
+  .customMdclass {
+    h3 {
+      margin-bottom: 20px;
+      font-weight: 400;
+      color: #1f2f3d;
+      font-size: 22px;
+      margin-top: 20px !important;
+    }
+    a {
+      text-decoration: none;
+      color: #ffb311;
+      opacity: 0;
+    }
+    table{
+      width: 100%;
+      font-size: 14px;
+      border-collapse: collapse;
+      td,tr{
+        text-align: left;
+      }
+      th{
+        color: #909399;
+        background-color: #f8f8f9;
+        padding: 12px 0;
+        padding-left: 10px;
+      }
+      td{
+        padding: 15px 10px;
+        max-width: 230px;
+        white-space: pre-wrap;
+        color: #606266;
+        vertical-align: middle;
+        border-bottom: 1px solid #e9eaed;
+        code{
+          color: #1a2a3a;
+          background-color: #ffecd9;
+          margin: 0 4px;
+          display: inline-block;
+          padding: 2px 5px;
+          font-size: 15px;
+          border-radius: 4px;
+        }
+      }
+    }
+    .catalogue{
+      width: 13vw;
+      margin-top: 40px;
+    }
+    .row{
+      margin-bottom: 10px;
+      color: #313639;
+    }
+  }
+}
+.whether-component {
+  margin-top: -50px;
+}
+.u-table-word-icon {
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+  &:hover{
+    color: $dh-color;
+  }
+}
+.selectTr td { background: #ccc !important;color: red !important;}
+
+// 表格API
+.tableApi {
+  .api-title {
+     margin-bottom: 20px;
+     font-weight: 400;
+     color: #1f2f3d;
+     font-size: 22px;
+  }
+}
