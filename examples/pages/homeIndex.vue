@@ -2,7 +2,7 @@
   <div class="homeIndex">
     <div class="desc width100">
       <h1>网站快速成型工具</h1>
-      <h2 class="desc-text">一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库; 流畅渲染表格万级数据</h2>
+      <h2 class="desc-text">为开发者的基于 Vue 2.0 的桌面端组件库; 流畅渲染表格万级数据</h2>
       <img src="../assets/banner.png" class="banner">
     </div>
     <div class="width100 desc">

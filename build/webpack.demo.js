@@ -135,13 +135,14 @@ const webpackConfig = {
     }
 }
 
+webpackConfig.externals = {
+    'vue': 'Vue',
+    'vue-router': 'VueRouter',
+    'element-ui': 'ELEMENT',
+    'vuex': 'Vuex',
+    'highlight.js': 'hljs'
+}
 if (isProd) {
-    webpackConfig.externals = {
-        'vue': 'Vue',
-        'vue-router': 'VueRouter',
-        'vuex': 'Vuex',
-        'highlight.js': 'hljs'
-    }
     webpackConfig.optimization.minimizer.push(
         new TerserPlugin({ // 压缩js
             test: /\.js($|\?)/i,

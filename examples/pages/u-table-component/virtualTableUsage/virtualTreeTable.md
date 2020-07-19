@@ -60,7 +60,7 @@
       },
       mounted () {
           // console.log(500 + (500 * 500) + (500 * 500 * 10))
-          const data = Array.from({ length: 1000 }, (_, idx) => ({
+          const data = Array.from({ length: 500 }, (_, idx) => ({
                id: idx + '_' + 1,
                date: '2016-05-03',
                name: 1,

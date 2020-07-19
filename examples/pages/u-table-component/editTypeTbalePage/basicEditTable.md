@@ -18,13 +18,13 @@
              :highlightCurrentRow="false"
              :edit-config="{trigger: 'click', mode: 'cell'}">
              <ux-table-column type="checkbox" width="60"></ux-table-column>
-             <ux-table-column type="index" width="80"></ux-table-column>
+             <ux-table-column type="index" width="50"></ux-table-column>
              <ux-table-column field="name" title="名字" min-width="140" edit-render>
                <template v-slot:edit="scope">
                  <el-input v-model="scope.row.name"></el-input>
                </template>
              </ux-table-column>
-             <ux-table-column field="age" title="年龄"  width="160">
+             <ux-table-column field="age" title="年龄"  width="80">
                <template v-slot:header="{ column }">
                  <span>{{ column.title }}</span>
                </template>
@@ -56,8 +56,7 @@
                   <template v-slot:edit="scope">
                       <el-cascader
                           v-model="scope.row.address"
-                          :options="options"
-                          @change="handleChange"></el-cascader>
+                          :options="options"></el-cascader>
                   </template>
                   <!--这个代表是自定义行中的显示（因为我需要对我，el-cascader选出来的信息进行转换，选出来是个数组）-->
                    <template v-slot="{ row }">{{ getCascader(row.address, options) }}</template>
@@ -72,7 +71,7 @@
                          </el-switch>
                      </template>
                 </ux-table-column>
-               <ux-table-column title="操作" width="120">
+               <ux-table-column title="操作" width="80">
                   <template v-slot="{ row }">
                      <el-button @click="saveEvent(row)">保存</el-button>
                   </template>

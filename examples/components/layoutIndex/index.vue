@@ -18,8 +18,19 @@
                 @click="linkNav(item.url)">
              {{ item.name }}
            </div>
+           <!--版本-->
            <div class="nav-item">
-             <a href="https://github.com/livelyPeng/u-table" target="_blank">GitHub</a>
+             <el-dropdown trigger="click">
+              <span class="el-dropdown-link">
+                {{ versionData[0] }}<i class="el-icon-arrow-down el-icon--right"></i>
+              </span>
+               <el-dropdown-menu slot="dropdown">
+                 <el-dropdown-item v-for="(item, index) in versionData" :key="index">{{ item }}</el-dropdown-item>
+               </el-dropdown-menu>
+             </el-dropdown>
+           </div>
+           <div class="nav-item">
+             <a href="https://github.com/u-leo/umy-ui" target="_blank">GitHub</a>
            </div>
          </div>
        </div>
@@ -32,6 +43,8 @@
   </div>
 </template>
 <script>
+  import versionData from '../../utils/version'
+    // 一级固定
   export default{
       data () {
           return {
@@ -49,7 +62,8 @@
                       name: '交流',
                       url: ''
                   }
-              ]
+              ],
+              versionData: versionData
           }
       },
       computed:{

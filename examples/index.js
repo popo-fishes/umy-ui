@@ -10,19 +10,14 @@ import './permission'
 import './themes/hightlight.scss'
 import 'element-ui/lib/theme-chalk/index.css';
 
-import UmyTable from 'umy-table'
-import 'umy-table/lib/theme-chalk/index.css'
-
-Vue.use(UmyTable)
-
 // 测试
-import '../lib/theme-chalk/index.css'
-import UmyUi from '../lib/umy-ui.common'
+// import '../lib/theme-chalk/index.css'
+// import UmyUi from '../lib/umy-ui.common'
 // 开发
-// import '../theme/index.scss'
-// import UmyUi from '../index'
+import '../theme/index.scss'
+import UmyUi from '../index'
 
-console.log(UmyUi)
+// console.log(UmyUi)
 // Vue.use(UTableColumn)
 // Vue.use(UTable)
 // Vue.use(UxGrid)
