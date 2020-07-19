@@ -16,7 +16,7 @@ const webpackConfig = {
     devtool: isProd ? false : '#eval-source-map',
     entry: {app: './examples/index.js'},
     output: isProd ? {
-        publicPath: '', // 发布路径
+        publicPath: './', // 发布路径
         filename: utils.assetsPath('js/[name].[hash:7].js'),
         chunkFilename: utils.assetsPath('js/[id].[hash:7].js'),
         path:path.join(__dirname,'../docs')

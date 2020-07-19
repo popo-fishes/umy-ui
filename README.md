@@ -6,7 +6,7 @@
 
 > QQ交流2群: 939125115新群未满员
 
-[umy-ui官网](https://www.umy-ui.com/docs/index.html)
+[umy-ui官网](https://u-leo.github.io/umy-ui/docs/inex.html)
 
 
 ## 友情链接
