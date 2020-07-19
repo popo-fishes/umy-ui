@@ -6,7 +6,7 @@
 
 > QQ交流2群: 939125115新群未满员
 
-[点击浏览umy-ui官网](https://livelypeng.github.io/pl-table/website-project/dist/index.html)
+[umy-ui官网](https://www.umy-ui.com/docs/index.html)
 
 
 ## 友情链接
