@@ -1,17 +1,52 @@
-##  一个基于 vue 的 PC 端UI库，解决万级数据渲染卡顿问题，过万数据点击全选卡顿，等等问题
+##  一个基于 vue 的 PC 端UI库，它解决万级数据渲染卡顿问题，过万数据点击全选卡顿，等等问题
+
+> umy-ui叫（U米-ui）或者叫悠米-ui
 
 > umy-ui集成了pl-table，也就说你使用了这个库呢，你就可以解决表格数据多，导致的一切问题！
 
-> （更多问题请加入umy-ui交流群吧）不需要您的捐赠， 只需要点击上方的Star！！！
+> (更多问题请加入umy-ui交流群吧), 不需要您的捐赠， 只需要点击上方的Star！！！
 
 > QQ交流1群: 675286117已满员
 
 > QQ交流2群: 939125115新群未满员
 
+> 文档，官网可能进入慢，点击页面卡是正常的，因为我们吧官网放在github上，加载比较慢。后续买个服务器部署下就好了哈！！
 [umy-ui官网](https://u-leo.github.io/umy-ui/docs/index.html)
 
 [umy-ui文档](https://u-leo.github.io/umy-ui/docs/index.html)
 
+
+# 安装
+
+### npm 安装
+
+推荐使用 npm 的方式安装，它能更好地和 webpack 打包工具配合使用
+
+```shell
+ npm install umy-ui
+```
+
+### CDN 方式
+
+目前可以通过 [https://unpkg.com/umy-ui/lib/index.js) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
+
+```html
+  <!--引入表格样式-->
+  <link rel="stylesheet" href="https://unpkg.com/umy-ui/lib/theme-chalk/index.css">
+
+  <!-- import Vue -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+  <script src="https://unpkg.com/umy-ui/lib/index.js"></script>
+  <!-- 真实项目不建议你直接引入  <script src="https://unpkg.com/umy-ui/lib/index.js"></script>-->
+
+  <!-- 这样去引如会直接下最新版本，如果你的项目打包发布了，然后遇见pl-table大更新 你可能项目会报错。-->
+
+  <!--推荐你这样引入： https://unpkg.com/umy-ui$1.0.1/lib/index.js   加入版本号！-->
+  <!-- 这样去引如会直接下最新版本，如果你的项目打包发布了，然后遇见umy-ui大更新 你可能项目会报错。-->
+
+  <!--推荐你这样引入： https://unpkg.com/umy-ui@1.0.1/lib/index.js   加入版本号！-->
+```
 
 
 ## 友情链接
