@@ -1,4 +1,4 @@
-##  一个基于 vue 的 PC 端UI库，它解决万级数据渲染卡顿问题，过万数据点击全选卡顿，等等问题
+### umy-ui 一套为开发者准备的基于 Vue 2.0 的桌面端组件库，完美解决表格万级数据渲染卡顿，编辑表格卡顿问题
 
 > umy-ui叫（U米-ui）或者叫悠米-ui
 
@@ -11,12 +11,12 @@
 > QQ交流2群: 939125115新群未满员
 
 > 文档，官网可能进入慢，点击页面卡是正常的，因为我们吧官网放在github上，加载比较慢。后续买个服务器部署下就好了哈！！
+
 [umy-ui官网](https://u-leo.github.io/umy-ui/docs/index.html)
 
 [umy-ui文档](https://u-leo.github.io/umy-ui/docs/index.html)
 
 
-# 安装
 
 ### npm 安装
 
