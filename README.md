@@ -1,4 +1,6 @@
-#  一个基于 vue 的 PC 端表格UI库，解决万级数据渲染卡顿问题，过万数据点击全选卡顿，等等问题
+##  一个基于 vue 的 PC 端UI库，解决万级数据渲染卡顿问题，过万数据点击全选卡顿，等等问题
+
+> umy-ui集成了pl-table，也就说你使用了这个库呢，你就可以解决表格数据多，导致的一切问题！
 
 > （更多问题请加入umy-ui交流群吧）不需要您的捐赠， 只需要点击上方的Star！！！
 
@@ -7,6 +9,9 @@
 > QQ交流2群: 939125115新群未满员
 
 [umy-ui官网](https://u-leo.github.io/umy-ui/docs/index.html)
+
+[umy-ui文档](https://u-leo.github.io/umy-ui/docs/index.html)
+
 
 
 ## 友情链接
