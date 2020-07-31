@@ -14,9 +14,9 @@
 
 > 文档，官网可能进入慢，点击页面卡是正常的，因为我们把官网放在github上，加载比较慢。后续买个服务器部署下就好了哈！！
 
-[umy-ui官网](https://u-leo.github.io/umy-ui/docs/index.html)
+[umy-ui官网](http://umyui.com/#/wel/index)
 
-[umy-ui文档](https://u-leo.github.io/umy-ui/docs/index.html)
+[umy-ui文档](http://umyui.com/#/wel/index)
 
 
 
