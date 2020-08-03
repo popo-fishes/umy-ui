@@ -2,10 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>umy-ui官网</title>
-  <link rel="shortcut icon" href="./favicon.ico"><link href="./app.css?_=c6c7f1741f6a8571661b" rel="stylesheet"></head>
+    <!--声明IE使用edge渲染，最高级别的IE内核 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--
+    width:可视区域的宽度，值可为数字或关键词device-width
+    height:同width
+    intial-scale:页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放
+    maximum-scale=1.0, minimum-scale=1.0;可视区域的缩放级别，
+    maximum-scale用户可将页面放大的程序，1.0将禁止用户放大到实际尺寸之上。
+    user-scalable:是否可对页面进行缩放，no 禁止缩放
+    -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=1">
+    <!--控制几款双核浏览器的渲染核心为webkit-->
+    <meta name="renderer" content="webkit">
+    <!--清除页面缓存-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="http://129.211.13.167/aplayer/dist/APlayer.min.css">
+    <title>umy-ui官网 一套为开发者准备的基于 Vue 2.0 的桌面端组件库，完美解决表格万级数据渲染卡顿，编辑表格卡顿问题</title>
+  <link rel="shortcut icon" href="/favicon.ico"><link href="/app.css?_=52e005c9db117963c99c" rel="stylesheet"></head>
   <body>
     <div id="app"></div>
     <script src="https://shadow.elemecdn.com/npm/vue@2.6.10/dist/vue.runtime.min.js"></script>
@@ -15,5 +32,6 @@
     <script src="https://35dinghuo.oss-cn-hangzhou.aliyuncs.com/smdh2/js/index2.js?file=index2.js"></script>
     <script src="https://shadow.elemecdn.com/app/element/highlight.pack.b1f71b31-3c07-11e9-ba1a-55bba1877129.js"></script>
     <!-- built files will be auto injected -->
-  <script type="text/javascript" src="./static/js/app.026ee2c.js"></script></body>
+    <script src="http://129.211.13.167/aplayer/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/static/js/app.b743fe8.js"></script></body>
 </html>

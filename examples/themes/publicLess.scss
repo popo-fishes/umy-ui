@@ -95,12 +95,14 @@ template {
 .whether-component {
   margin-top: -50px;
 }
-.u-table-word-icon {
-  font-size: 18px;
-  margin-left: 10px;
+.icon-us {
   cursor: pointer;
   &:hover{
     color: $dh-color;
+  }
+  .u-table-word-icon {
+    font-size: 18px;
+    margin-left: 10px;
   }
 }
 .selectTr td { background: #ccc !important;color: red !important;}
@@ -113,4 +115,23 @@ template {
      color: #1f2f3d;
      font-size: 22px;
   }
+}
+
+// 全部显示的编辑型表格样式
+.my-input-sc {
+   display: inline-block;
+   height: $default-height;
+   line-height: 30px;
+   -webkit-appearance: none;
+   background-color: #FFFFFF;
+   background-image: none;
+   border-radius: 4px;
+   border: 1px solid #DCDFE6;
+   box-sizing: border-box;
+   color: #606266;
+   font-size: inherit;
+   outline: none;
+   padding: 0 15px;
+   transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+   width: 100%;
 }

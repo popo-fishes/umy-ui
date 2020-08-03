@@ -28,6 +28,7 @@
           header-drag-style
           :height="height"
           :treeConfig="{children: 'children', expandAll: false}"
+          @toggle-tree-expand="toggleTreeExpand"
           use-virtual
           row-key="id"
           border>
@@ -92,6 +93,10 @@
             getTreeExpansionEvent () {
                 console.log(this.$refs.plTreeTable.getTreeExpandRecords())
             },
+            // 收起展开时触发
+            toggleTreeExpand (row, treeExpanded, event) {
+              console.log(row, treeExpanded, event)
+            }
       }
     }
   </script>

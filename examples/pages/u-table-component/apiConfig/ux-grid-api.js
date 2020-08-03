@@ -150,6 +150,10 @@ export const data = [
         type: '—', optionalValue: '—', defaultValue: '—',
         children: [
             {
+                parameter: 'checkField', explain: '渲染速度更快（建议数据量大时使用，行数据中必须存在该字段，否则无效）',
+                type: 'string', optionalValue: '—', defaultValue: "—",
+            },
+            {
                 parameter: 'showHeader', explain: '是否显示全选按钮',
                 type: 'boolean', optionalValue: '—', defaultValue: "true",
             },
@@ -450,6 +454,11 @@ export const methodsData = [
         methodsName: 'updateStatus',
         explain: '更新单元格状态（当使用自定义渲染时可能会用到）',
         parameter: 'scope: { row, column }'
+    },
+    {
+        methodsName: 'remove',
+        explain: '删除指定行数据（不支持深层结构），指定 row 或 [row, ...] 删除多条数据，如果为空则删除所有数据',
+        parameter: '这样调用，this.$refs.表格组件绑定的ref属性名.remove(row || [row, ...])'
     },
     {
         methodsName: 'removeCheckboxRow',

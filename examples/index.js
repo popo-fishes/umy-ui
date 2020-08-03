@@ -8,7 +8,6 @@ import ElementUI from 'element-ui';
 import highlightJs from 'highlight.js'
 import './permission'
 import './themes/hightlight.scss'
-import 'element-ui/lib/theme-chalk/index.css';
 
 // 测试
 // import '../lib/theme-chalk/index.css'
@@ -17,14 +16,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 import '../theme/index.scss'
 import UmyUi from '../index'
 
-// console.log(UmyUi)
-// Vue.use(UTableColumn)
-// Vue.use(UTable)
-// Vue.use(UxGrid)
-// Vue.use(UxTableColumn)
+console.log(UmyUi)
 
-Vue.use(UmyUi)
 Vue.use(ElementUI)
+Vue.use(UmyUi)
 
 router.afterEach(() => {
     Vue.nextTick(() => document.querySelectorAll('pre code').forEach(block=>highlightJs.highlightBlock(block)))

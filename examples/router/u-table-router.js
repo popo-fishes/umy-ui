@@ -42,6 +42,11 @@ const editTypeTbalePage = [
         path: 'InsertRow',
         component: () => import('../pages/u-table-component/editTypeTbalePage/InsertRow.md'),
         name: '插入行',
+    },
+    {
+        path: 'showAll',
+        component: () => import('../pages/u-table-component/editTypeTbalePage/showAll.md'),
+        name: '全部显示',
     }
 ]
 // 虚拟滚动表格

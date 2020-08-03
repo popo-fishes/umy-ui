@@ -12,16 +12,10 @@ var MAIN_TEMPLATE = `/* 自动生成者来着 './build/build-entry.js' */
 
 {{include}}
 import locale from 'umy-ui/tools/locale';
-// 导出u-table
-import { UTableColumn, UTable, UxGrid, UxTableColumn } from 'umy-table'
 // 引入u-table的locale
 import tableLocale from 'umy-table/lib/locale'
 
 const components = [
-  UTableColumn,
-  UTable,
-  UxGrid,
-  UxTableColumn,
 {{install}}
 ];
 
@@ -51,10 +45,6 @@ export default {
   locale: locale.use,
   i18n: locale.i18n,
   install,
-  UTableColumn,
-  UTable,
-  UxGrid,
-  UxTableColumn,
 {{list}}
 };
 `;

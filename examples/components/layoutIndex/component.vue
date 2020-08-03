@@ -14,12 +14,13 @@
             <div class="menuList">
                 <div class="item-pl" v-for="(item, index) in componentsData" :key="index">
                     <p class="title-pl beyond" :title="item.title">
-                        {{ item.title }}
-                        <span class="u-table-word-icon"
-                              @click="openCom(item.show, index)"
-                              v-if="item.title !== '起步'">
-                            <i :class="[item.show ? 'el-icon-arrow-up' : 'el-icon-arrow-down']"></i>
+                        <span v-if="item.title !== '起步'" @click="openCom(item.show, index)" class="icon-us user-select">
+                             {{ item.title }}
+                             <span class="u-table-word-icon">
+                                 <i :class="[item.show ? 'el-icon-arrow-up' : 'el-icon-arrow-down']"></i>
+                             </span>
                         </span>
+                        <span v-else>{{ item.title }}</span>
                     </p>
                     <!--如果当前是展开状态 或者是“起步” 就直接展示子集-->
                     <ul class="list-pl" v-if="item.show || item.title === '起步'">
@@ -75,6 +76,15 @@
                 return url === '/wel/component/u-table-column-api' ||
                     url === '/wel/component/paginationAndSideslipFrame'
             },
+        },
+        mounted () {
+            this.componentsData.forEach(row => {
+                row.list.forEach(item => {
+                    if (this.basics + item.url === this.activeUrl) {
+                        row.show = true
+                    }
+                })
+            })
         },
         methods: {
             openCom (fals, index) {

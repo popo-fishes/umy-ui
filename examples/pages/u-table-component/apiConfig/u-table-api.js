@@ -3,10 +3,10 @@
 */
 export const columns = [
     {prop: 'parameter', label: '参数', width: 200},
-    {prop: 'explain', label: '说明', minWidth: 200},
+    {prop: 'explain', label: '说明', minWidth: 300},
     {prop: 'type', label: '类型', width: 150},
     {prop: 'optionalValue', label: '可选值', width: 200},
-    {prop: 'defaultValue', label: '默认值', width: 200}
+    {prop: 'defaultValue', label: '默认值', width: 150}
 ]
 // u-table属性的数据 // 33 + 16 = 49
 export const data = [
@@ -208,7 +208,7 @@ export const data = [
     },
     {
         parameter: 'use-virtual',
-        explain: '是否开启虚拟滚动 (解决大数据渲染卡顿问题)',
+        explain: '是否开启虚拟滚动 (解决大数据渲染卡顿问题)， 不开启row-key代表是个大数据表格，开启row-key代表是个大数据树型表格',
         type: 'Boolean', optionalValue: '—', defaultValue: 'false',
     },
     {
@@ -363,8 +363,13 @@ export const eventsData = [
     },
     {
         eventName: 'expand-change',
-        explain: '当用户对某一行展开或者关闭的时候会触发该事件',
+        explain: '当用户对某一行展开或者关闭的时候会触发该事件,  注意：你不开启use-virtual才有效，开启了就不生效。文档开头用前须知部分有介绍，开启不支持展开行',
         parameter: 'row, expandedRows'
+    },
+    {
+        eventName: 'toggle-tree-expand',
+        explain: '用于u-table虚拟表格树, 当虚拟树节点展开或收起时会触发该事件',
+        parameter: 'row, treeExpanded, event'
     },
     {
         eventName: 'row-click',
@@ -398,7 +403,8 @@ export const eventsData = [
 export const columnsMethods = [
     {prop: 'methodsName', label: '方法名', width: 200},
     {prop: 'explain', label: '说明', minWidth: 200},
-    {prop: 'parameter', label: '参数', width: 250}
+    {prop: 'parameter', label: '参数', width: 250},
+    {prop: 'careful', label: '注意点', minWidth: 200},
 ]
 export const methodsData = [
     {
@@ -413,6 +419,8 @@ export const methodsData = [
     },
     {
         methodsName: 'toggleRowSelection',
+        careful: '注意：开启row-key且开启use-virtual且存在复选框，代表是个大数据树型表格带上复选框，如果你在按照你的原始数据（原始数据的意思就是你赋值给我表格的数据）' +
+            '，中的row传递给我去勾选可能勾选不上。此时你可能需要虚拟树处理后的数据中的row去勾选。那么你需要用到这个方法getUTreeData，具体请看这个方法getUTreeData',
         explain: '用于表格多选，切换某一行的选中状态。obj如果使用了第二个参数，则是设置这一行选中与否（selected 为 true 则选中）',
         parameter: 'rows 格式: [{  row: row, selected: true || false }]'
     },
@@ -469,6 +477,11 @@ export const methodsData = [
     {
         methodsName: 'getTableColumn',
         explain: '获取表格的列',
+        parameter: '—'
+    },
+    {
+        methodsName: 'getUTreeData',
+        explain: '返回虚拟树的table数据,它常用于虚拟树复选框的勾选,不是虚拟树且没有复选框用不到',
         parameter: '—'
     },
     {

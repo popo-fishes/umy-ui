@@ -2,6 +2,7 @@
   <div class="layoutIndexBox card-box" ref="cardBox">
     <div class="navbar width100">
        <div class="title-pl" @click="linkNav('/')">umy-ui</div>
+       <div id="aplayer" class="aplayer"></div>
        <div class="nav-pl">
          <div class="search-box">
            <el-input
@@ -35,14 +36,12 @@
          </div>
        </div>
     </div>
-    <div class="mainBox">
-       <router-view/>
-    </div>
-    <!--加入音频播放器-->
-    <audio src="https://35dinghuo.oss-cn-hangzhou.aliyuncs.com/static/mangzhong.mp3" class="plAudio" controls="controls" autoplay="autoplay" loop="loop"></audio>
+    <div class="mainBox"><router-view/></div>
   </div>
 </template>
 <script>
+  import APlayer from 'APlayer'
+  import Drag from '../../utils/Drag'
   import versionData from '../../utils/version'
     // 一级固定
   export default{
@@ -63,7 +62,7 @@
                       url: ''
                   }
               ],
-              versionData: versionData
+              versionData: versionData,
           }
       },
       computed:{
@@ -73,6 +72,56 @@
           componentActive () {
               return this.$store.state.componentActive
           }
+      },
+      mounted () {
+          Drag()
+          const ap = new APlayer({
+              container: document.getElementById('aplayer'),
+              autoplay: true,
+              audio: [
+                  {
+                      name: '芒种',
+                      artist: '赵方婧',
+                      url: 'https://35dinghuo.oss-cn-hangzhou.aliyuncs.com/static/mangzhong.mp3',
+                      cover: 'http://129.211.13.167/music/mz.jpg'
+                  },
+                  {
+                      name: '晴天',
+                      artist: '周杰伦',
+                      url: 'http://129.211.13.167/music/qingtian.mp3',
+                      lrc: 'http://129.211.13.167/music/qingtian.lrc',
+                      cover: 'http://129.211.13.167/music/zjl.png'
+                  },
+                  {
+                      name: '鼓楼',
+                      artist: '赵雷',
+                      url: 'http://129.211.13.167/music/gulou.mp3',
+                      lrc: 'http://129.211.13.167/music/gulou.lrc',
+                      cover: 'http://129.211.13.167/music/zhaolei.png'
+                  },
+                  {
+                      name: 'Shots',
+                      artist: 'imagine dragons',
+                      url: 'http://129.211.13.167/music/Shots.mp3',
+                      lrc: 'http://129.211.13.167/music/Shots.lrc',
+                      cover: 'http://129.211.13.167/music/shots.png'
+                  },
+                  {
+                      name: '有何不可',
+                      artist: '许嵩',
+                      url: 'http://129.211.13.167/music/youhebuke.mp3',
+                      lrc: 'http://129.211.13.167/music/youhebuke.lrc',
+                      cover: 'http://129.211.13.167/music/xusong.png'
+                  },
+                  {
+                      name: '浪人琵琶',
+                      artist: '胡66',
+                      url: 'http://129.211.13.167/music/langrenpipa.mp3',
+                      lrc: 'http://129.211.13.167/music/langrenpipa.lrc',
+                      cover: 'http://129.211.13.167/music/hu66.png'
+                  }
+              ]
+          });
       },
       methods: {
           linkNav (val) {
@@ -95,7 +144,13 @@
 </script>
 
 <style lang="scss">
-  .layoutIndexBox {
+   .aplayer {
+        position: fixed;
+        left: 250px;
+        top: 10px;
+        z-index: 10000;
+    }
+    .layoutIndexBox {
     .plAudio {visibility: hidden;width: 0;height: 0;}
     .navbar {
       z-index: 1000;
@@ -106,6 +161,7 @@
       left: 0;
       display: flex;
       width: calc(100% - 9px);
+      min-width: 1200px;
       padding: 10px 30px;
       border-bottom: 1px solid #eaecef;
       .nav-pl {

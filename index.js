@@ -1,18 +1,20 @@
 /* 自动生成者来着 './build/build-entry.js' */
 
 import Demo from './packages/demo/index.js';
+import UTableColumn from './packages/u-table-column/index.js';
+import UTable from './packages/u-table/index.js';
+import UxGrid from './packages/ux-grid/index.js';
+import UxTableColumn from './packages/ux-table-column/index.js';
 import locale from 'umy-ui/tools/locale';
-// 导出u-table
-import { UTableColumn, UTable, UxGrid, UxTableColumn } from 'umy-table'
 // 引入u-table的locale
 import tableLocale from 'umy-table/lib/locale'
 
 const components = [
+  Demo,
   UTableColumn,
   UTable,
   UxGrid,
-  UxTableColumn,
-  Demo
+  UxTableColumn
 ];
 
 const install = function(Vue, opts = {}) {
@@ -37,13 +39,13 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.0.2',
+  version: '1.0.4',
   locale: locale.use,
   i18n: locale.i18n,
   install,
+  Demo,
   UTableColumn,
   UTable,
   UxGrid,
-  UxTableColumn,
-  Demo
+  UxTableColumn
 };

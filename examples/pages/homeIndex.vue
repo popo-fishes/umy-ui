@@ -2,7 +2,7 @@
   <div class="homeIndex">
     <div class="desc width100">
       <h1>网站快速成型工具</h1>
-      <h2 class="desc-text">为开发者的基于 Vue 2.0 的桌面端组件库; 流畅渲染表格万级数据</h2>
+      <h2 class="desc-text">为开发者准备的基于 Vue 2.0 的桌面端组件库; 流畅渲染表格万级数据</h2>
       <img src="../assets/banner.png" class="banner">
     </div>
     <div class="width100 desc">
@@ -35,7 +35,7 @@
                     },
                     {
                         url: 'https://github.com/JakHuang/form-generator',
-                        title: 'Element UI 表单设计及代码生成器（可视化表单设计器，一键生成 element 表单）'
+                        img: require('../assets/from-gen-all.jpg')
                     }
                 ]
             }

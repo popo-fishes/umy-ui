@@ -39,7 +39,8 @@ export default [
         list: [
             {title: '点击触发', url: 'basicEditTable'},
             {title: '手动触发', url: 'manualTrigger'},
-            {title: '插入行', url: 'InsertRow'}
+            {title: '插入行', url: 'InsertRow'},
+            {title: '全部显示', url: 'showAll'}
         ]
     },
     {

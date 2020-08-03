@@ -1,3 +1,7 @@
 {
-  "demo": "./packages/demo/index.js"
+  "demo": "./packages/demo/index.js",
+  "u-table-column": "./packages/u-table-column/index.js",
+  "u-table": "./packages/u-table/index.js",
+  "ux-grid": "./packages/ux-grid/index.js",
+  "ux-table-column": "./packages/ux-table-column/index.js"
 }

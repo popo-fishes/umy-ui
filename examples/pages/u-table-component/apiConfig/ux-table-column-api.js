@@ -167,7 +167,14 @@ export const data = [
     {
         parameter: 'edit-render',
         explain: '可编辑渲染器',
-        type: 'boolean', optionalValue: '—', defaultValue: 'false'
+        type: 'boolean || Object, 你需要用到下面属性就需要个对象，不需要就给个boolean即可', optionalValue: '—', defaultValue: '—',
+        children: [
+            {
+                parameter: 'autofocus',
+                explain: '如果是自定义渲染可以指定聚焦的选择器，例如 .my-input; 在自定义渲染编辑组件非常有用。你可以看下编辑表格的全部显示，示例部分的讲解',
+                type: 'String', optionalValue: '—', defaultValue: '—',
+            }
+        ]
     },
     {
         parameter: 'tree-node',

@@ -1,6 +1,6 @@
 ### umy-ui 一套为开发者准备的基于 Vue 2.0 的桌面端组件库，完美解决表格万级数据渲染卡顿，编辑表格卡顿问题
 
-> umy-ui叫（U米-ui）或者叫悠米-ui
+> umy-ui叫（U米-ui）
 
 > umy-ui集成了pl-table，也就说您使用了这个库呢，您就可以解决表格数据多，导致的一切问题！
 
@@ -12,11 +12,9 @@
 
 > QQ交流2群: 939125115新群未满员
 
-> 文档，官网可能进入慢，因为我们带宽小，加载慢！
+[umy-ui官网](http://129.211.13.167/#/wel/index)
 
-[umy-ui官网](http://umyui.com/#/wel/index)
-
-[umy-ui文档](http://umyui.com/#/wel/index)
+[umy-ui文档](http://129.211.13.167/#/wel/index)
 
 
 
