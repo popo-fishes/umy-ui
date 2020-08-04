@@ -78,12 +78,15 @@
           const ap = new APlayer({
               container: document.getElementById('aplayer'),
               autoplay: true,
+              lrcType: 3,
+              listMaxHeight: 90,
               audio: [
                   {
                       name: '芒种',
                       artist: '赵方婧',
                       url: 'https://35dinghuo.oss-cn-hangzhou.aliyuncs.com/static/mangzhong.mp3',
-                      cover: 'http://129.211.13.167/music/mz.jpg'
+                      cover: 'http://129.211.13.167/music/mz.jpg',
+                      lrc: 'http://129.211.13.167/music/mangzhong.lrc',
                   },
                   {
                       name: '晴天',
@@ -147,6 +150,8 @@
    .aplayer {
         position: fixed;
         left: 250px;
+        min-width: 500px;
+        max-width: 600px;
         top: 10px;
         z-index: 10000;
     }

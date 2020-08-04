@@ -116,6 +116,8 @@
     "vue": "^2.6.10",
     "vue-loader": "^15.2.1",
     "vue-router": "^3.1.5",
+    "vue-aplayer": "^1.6.1",
+    "hls.js": "0.12.4",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.15",
     "vue-template-es2015-compiler": "^1.6.0",
