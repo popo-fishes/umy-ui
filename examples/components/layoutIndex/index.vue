@@ -17,11 +17,18 @@
                 :class="{ active: activeUrl === item.url || (componentActive && item.name === '组件') }"
                 :key="index"
                 @click="linkNav(item.url)">
-             {{ item.name }}
+               <el-popover v-if="item.name === '交流'" placement="top-start" width="200" trigger="hover">
+                   <div class="jiaoliu">
+                       <p>QQ交流1群: 675286117已满员</p>
+                       <p>QQ交流2群: 939125115新群未满员</p>
+                   </div>
+                   <span slot="reference">{{ item.name }}</span>
+               </el-popover>
+             <span v-else>{{ item.name }}</span>
            </div>
            <!--版本-->
            <div class="nav-item">
-             <el-dropdown trigger="click">
+             <el-dropdown trigger="hover">
               <span class="el-dropdown-link">
                 {{ versionData[0] }}<i class="el-icon-arrow-down el-icon--right"></i>
               </span>
@@ -79,7 +86,8 @@
               container: document.getElementById('aplayer'),
               autoplay: true,
               lrcType: 3,
-              listMaxHeight: 90,
+              listMaxHeight: '150px',
+              // 开发模式下不显示歌词，是正常的
               audio: [
                   {
                       name: '芒种',
@@ -122,6 +130,34 @@
                       url: 'http://129.211.13.167/music/langrenpipa.mp3',
                       lrc: 'http://129.211.13.167/music/langrenpipa.lrc',
                       cover: 'http://129.211.13.167/music/hu66.png'
+                  },
+                  {
+                      name: '最爱',
+                      artist: '周慧敏',
+                      url: 'http://129.211.13.167/music/zuiai.mp3',
+                      lrc: 'http://129.211.13.167/music/zuiai.lrc',
+                      cover: 'http://129.211.13.167/music/zhouhuimin.png'
+                  },
+                  {
+                      name: '野孩子',
+                      artist: '杨千嬅',
+                      url: 'http://129.211.13.167/music/yehaizi.mp3',
+                      lrc: 'http://129.211.13.167/music/yehaizi.lrc',
+                      cover: 'http://129.211.13.167/music/yangqianhua.png'
+                  },
+                  {
+                      name: '淋雨一直走',
+                      artist: '张韶涵',
+                      url: 'http://129.211.13.167/music/lyyzz.mp3',
+                      lrc: 'http://129.211.13.167/music/lyyzz.lrc',
+                      cover: 'http://129.211.13.167/music/zhangshaohan.png'
+                  },
+                  {
+                      name: 'Run Free',
+                      artist: 'Deep Chills _ IVIE',
+                      url: 'http://129.211.13.167/music/runFree.mp3',
+                      lrc: 'http://129.211.13.167/music/runFree.lrc',
+                      cover: 'http://129.211.13.167/music/runFree.png'
                   }
               ]
           });
@@ -147,7 +183,13 @@
 </script>
 
 <style lang="scss">
-   .aplayer {
+    .jiaoliu {
+        font-size: 14px;
+    }
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        color: $dh-color !important;
+    }
+    .aplayer {
         position: fixed;
         left: 250px;
         min-width: 500px;
