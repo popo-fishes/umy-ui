@@ -87,6 +87,11 @@ const virtualScrolling = [
         name: 'ux-grid多级头'
     },
     {
+        path: 'expandRow',
+        component: () => import('../pages/u-table-component/virtualTableUsage/expandRow.vue'),
+        name: 'ux-grid展开行'
+    },
+    {
         path: 'reverseTable',
         component: () => import('../pages/u-table-component/virtualTableUsage/reverseTable.md'),
         name: 'ux-grid反转'
@@ -97,9 +102,31 @@ const virtualScrolling = [
         name: 'ux-grid筛选'
     },
     {
+        path: 'ux-grid-jsx',
+        component: () => import('../pages/u-table-component/virtualTableUsage/ux-grid-jsx.vue'),
+        name: 'ux-grid-jsx'
+    },
+    {
         path: 'multi-label-switching',
         component: () => import('../pages/u-table-component/virtualTableUsage/multi-label-switching.md'),
         name: 'multi-label-switching'
+    },
+    {
+        path: 'keepAliveTable',
+        component: () => import('../pages/u-table-component/virtualTableUsage/keepAliveTable.vue'),
+        name: 'keepAliveTable',
+        children: [
+            {
+                path: 'tab1',
+                component: () => import('../pages/u-table-component/virtualTableUsage/tab1.vue'),
+                name: 'tab1'
+            },
+            {
+                path: 'tab2',
+                component: () => import('../pages/u-table-component/virtualTableUsage/tab2.vue'),
+                name: 'tab2'
+            }
+        ]
     },
 ]
 // 基础表格

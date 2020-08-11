@@ -15,6 +15,10 @@ export const data = [
         explain: '表格数据',
     },
     {
+        parameter: 'columns', type: 'array', optionalValue: '—', defaultValue: '—',
+        explain: '列配置, 它用来jsx模式自定义列。你可以看虚拟表格部分的jsx自定义实例。列上的属性如同ux-table-column',
+    },
+    {
         parameter: 'height',
         explain: '表格高度（不给高度，那么就是自适应高度；)',
         type: 'string/number', optionalValue: '—', defaultValue: '—',
@@ -210,6 +214,38 @@ export const data = [
             }
         ]
     },
+    {
+        parameter: 'expand-config',
+        explain: '展开行配置项',
+        type: '—', optionalValue: '—', defaultValue: '—',
+        children: [
+            {
+                parameter: 'labelField',
+                explain: '展开列显示的字段名，可以直接显示在单元格中',
+                type: 'string', optionalValue: '—', defaultValue: '—',
+            },
+            {
+                parameter: 'expandAll',
+                explain: '默认展开所有行（只会在初始化时被触发一次）',
+                type: 'boolean', optionalValue: '—', defaultValue: '—',
+            },
+            {
+                parameter: 'expandRowKeys',
+                explain: '默认展开指定行（只会在初始化时被触发一次，需要有 row-id）',
+                type: 'string[] 如["1", "2"]', optionalValue: '—', defaultValue: '—',
+            },
+            {
+                parameter: 'accordion',
+                explain: '每次只能展开一行',
+                type: 'boolean', optionalValue: '—', defaultValue: '—',
+            },
+            {
+                parameter: 'trigger',
+                explain: '触发方式',
+                type: 'string', optionalValue: 'default（点击展开按钮触发）, cell（点击单元格触发）, row（点击行触发）', defaultValue: 'default',
+            }
+        ]
+    }
 ]
 /**
  * ux-grid Events（表格事件）
@@ -513,6 +549,26 @@ export const methodsData = [
     {
         methodsName: 'updateData',
         explain: '手动处理数据（对于手动更改了排序、筛选...等条件后需要重新处理数据时可能会用到）',
+        parameter: '—'
+    },
+    {
+        methodsName: 'toggleRowExpand(row)',
+        explain: '用于 type=expand，切换展开行的状态',
+        parameter: '—'
+    },
+    {
+        methodsName: 'setRowExpand(rows, checked)',
+        explain: '用于 expand-config，设置展开行，二个参数设置这一行展开与否',
+        parameter: '—'
+    },
+    {
+        methodsName: 'setAllRowExpand(checked)',
+        explain: '用于 expand-config，设置所有行的展开与否（如果是关闭所有行，可以使用 clearRowExpand 快速清除）',
+        parameter: '—'
+    },
+    {
+        methodsName: 'clearRowExpand()',
+        explain: '用于 type=expand，手动清空展开行状态，数据会恢复成未展开的状态',
         parameter: '—'
     }
 ]

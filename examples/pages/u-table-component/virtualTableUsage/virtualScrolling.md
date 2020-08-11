@@ -42,6 +42,15 @@
              :label="item.label"
              :fixed="item.fixed"
              :width="item.width"/>
+         <u-table-column
+               fixed="right"
+               label="操作"
+               width="150">
+               <template slot-scope="scope">
+                 <el-button type="text" size="small">查看</el-button>
+                 <el-button type="text" size="small">编辑</el-button>
+               </template>
+             </u-table-column>
         </u-table>
     </div>
  </template>
@@ -51,7 +60,7 @@
       data() {
         return {
           height: 0,
-          rowHeight: 50,
+          rowHeight: 55, // 如果你这里给行高为50，那么你表格行会出现错乱，不要问为啥，因为你可以看看控制台看节点的高是多少，是55，而你这里给50就有问题！
           columns: Array.from({ length: 20 }, (_, idx) => ({
               prop: 'address', id: idx, label: '地址地址地址地址地址地址地址地址地址地址地址' + idx, width: 200
           })),
@@ -65,8 +74,6 @@
         }
       },
       mounted () {
-        // 假如你在这里搞个setTimeout3秒去赋值高度，且表格数据很，那么你这个页面进来会非常卡，
-        // 因为啊，你在data()里面声明高度为0，然后呢。去看看顶部说的那句话，如果高度为0虚拟滚动就会关闭。
         this.height = 500 // 动态设置高度
       },
       methods: {

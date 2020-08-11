@@ -16,12 +16,12 @@ export const data = [
     },
     {
         parameter: 'height',
-        explain: '表格高度（不给高度，或者高度为0，那么就是自适应高度；不支持百分比)',
+        explain: '表格高度（不给高度，或者高度为0，那么就是自适应；不给height或者不给maxheight，虚拟滚动直接会关闭）。 如果你数据多而且高度为0或者为空，那么就会卡死，不支持百分比',
         type: 'string/number', optionalValue: '—', defaultValue: '—',
     },
     {
         parameter: 'max-height',
-        explain: 'Table 的最大高度。合法的值为数字（不支持百分比)',
+        explain: 'Table 的最大高度。不给height或者不给maxheight，虚拟滚动直接会关闭）, 合法的值为数字（不支持百分比)',
         type: 'string/number', optionalValue: '—', defaultValue: '—',
     },
     {

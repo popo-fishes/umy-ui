@@ -33,12 +33,12 @@
                   <u-table-column
                     prop="province"
                     label="省份打打123"
-                    width="120">
+                    width="220">
                   </u-table-column>
                   <u-table-column
                     prop="city"
                     label="市区"
-                    width="120">
+                    width="220">
                   </u-table-column>
                   <u-table-column
                     prop="address"

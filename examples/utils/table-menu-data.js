@@ -21,16 +21,19 @@ export default [
         title: '虚拟表格',
         show: false,
         list: [
-            {title: '虚拟滚动', url: 'virtualScrolling'},
-            {title: '数据变化', url: 'dataChangesTable'},
-            {title: '分组表头', url: 'groupHeader'},
-            {title: '虚拟滚动多选框', url: 'virtualCheckboxTable'},
-            {title: '虚拟树形表格', url: 'virtualTreeTable'},
+            {title: 'u-table虚拟', url: 'virtualScrolling'},
+            {title: 'u-table数据变化', url: 'dataChangesTable'},
+            {title: 'u-table多表头', url: 'groupHeader'},
+            {title: 'u-table多选框', url: 'virtualCheckboxTable'},
+            {title: 'u-table树表格', url: 'virtualTreeTable'},
             {title: 'ux-grid虚拟', url: 'columnsAndRows'},
-            {title: 'ux-grid分组表头', url: 'multistageHeadUx'},
+            {title: 'ux-grid多表头', url: 'multistageHeadUx'},
+            {title: 'ux-grid展开行', url: 'expandRow'},
             {title: 'ux-grid反转', url: 'reverseTable'},
             {title: 'ux-grid筛选', url: 'ux-grid-screen'},
-            {title: '多标签切换', url: 'multi-label-switching'}
+            {title: 'ux-grid用jsx自定义列', url: 'ux-grid-jsx'},
+            {title: '多标签切换', url: 'multi-label-switching'},
+            {title: 'keepAlive的表格', url: 'keepAliveTable/Tab1'}
         ]
     },
     {
