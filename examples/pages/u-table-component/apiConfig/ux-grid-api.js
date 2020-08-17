@@ -144,6 +144,11 @@ export const data = [
         type: 'boolean', optionalValue: '—', defaultValue: 'false',
     },
     {
+        parameter: 'columnKey',
+        explain: '是否需要为每一列的 VNode 设置 key 属性（非特殊情况下不需要使用, 常用于拖拽列）',
+        type: 'boolean', optionalValue: '—', defaultValue: 'false',
+    },
+    {
         parameter: 'rowId',
         explain: '自定义行数据唯一主键的字段名（行数据必须要有唯一主键，默认自动生成）',
         type: 'String', optionalValue: '—', defaultValue: '_XID',
@@ -485,6 +490,11 @@ export const methodsData = [
         methodsName: 'getTableColumn',
         explain: '获取当前表格的列（收集到的全量列、全量表头列、处理条件之后的全量表头列、当前渲染中的表头列）',
         parameter: '返回参数{collectColumn, fullColumn, visibleColumn, tableColumn}'
+    },
+    {
+        methodsName: 'getColumnIndex',
+        explain: '根据 column 获取相对于 columns 中的索引',
+        parameter: 'Number'
     },
     {
         methodsName: 'updateStatus',

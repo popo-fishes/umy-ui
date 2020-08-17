@@ -1,6 +1,6 @@
 {
   "name": "umy-ui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "一个基于 vue 的 PC 端表格UI库，解决万级数据渲染卡顿问题，过万数据点击全选卡顿，等等问题",
   "author": {
     "name": "u-leo",
@@ -42,7 +42,7 @@
     "normalize-wheel": "^1.0.1",
     "resize-observer-polyfill": "^1.5.0",
     "throttle-debounce": "^1.0.1",
-    "umy-table": "^1.0.5",
+    "umy-table": "^1.0.6",
     "vuedraggable": "^2.23.2",
     "xe-utils": "2.6.5"
   },
@@ -98,7 +98,7 @@
     "markdown-it-container": "^2.0.0",
     "mini-css-extract-plugin": "^0.4.1",
     "mocha": "^6.0.2",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss": "^7.0.14",
     "progress-bar-webpack-plugin": "^1.11.0",
@@ -109,6 +109,7 @@
     "sinon": "^7.2.7",
     "sinon-chai": "^3.3.0",
     "style-loader": "^0.23.1",
+    "sortablejs": "^1.10.2",
     "transliteration": "^1.1.11",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "uppercamelcase": "^1.1.0",

@@ -33,7 +33,9 @@ export default [
             {title: 'ux-grid筛选', url: 'ux-grid-screen'},
             {title: 'ux-grid用jsx自定义列', url: 'ux-grid-jsx'},
             {title: '多标签切换', url: 'multi-label-switching'},
-            {title: 'keepAlive的表格', url: 'keepAliveTable/Tab1'}
+            {title: 'keepAlive的表格', url: 'keepAliveTable/Tab1'},
+            {title: '拖拽列', url: 'dragCol'},
+            {title: '拖拽行', url: 'dragRow'}
         ]
     },
     {

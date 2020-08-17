@@ -71,6 +71,7 @@
                       prop: idx > 2 ? col[2] : col[idx],
                       id: idx,
                       label: idx > 2 ? col[2] : col[idx],
+                      fixed: idx < 3 ? 'left' : '',
                       width: 200,
                       sortable: idx === 1,
                       resizable: true
@@ -100,7 +101,7 @@
                describe: '欢迎使用plx' + idx
           }))
           this.$refs.plxTable.reloadData(this.datas)
-          // 滚动到顶部
+          // 默认是数据变化滚动到顶部，这里需要手动滚动之前位置
           if (this.radio === 2) {
               this.$refs.plxTable.pagingScrollTopLeft(this.scrollTop)
           }

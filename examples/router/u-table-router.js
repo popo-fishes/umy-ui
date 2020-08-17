@@ -128,6 +128,16 @@ const virtualScrolling = [
             }
         ]
     },
+    {
+        path: 'dragCol',
+        component: () => import('../pages/u-table-component/virtualTableUsage/dragCol'),
+        name: 'dragCol'
+    },
+    {
+        path: 'dragRow',
+        component: () => import('../pages/u-table-component/virtualTableUsage/dragRow'),
+        name: 'dragRow'
+    }
 ]
 // 基础表格
 const basicTable = [

@@ -82,10 +82,6 @@
            <ux-table-column field="sex" title="性别"></ux-table-column>
            <ux-table-column field="age" title="年龄"></ux-table-column>
        </ux-grid>
-       <pre>
-            <code>{{ demo[0] }}</code>
-            <code>{{ demo[1] }}</code>
-        </pre>
    </div>
 </template>`,
                   `export default {
