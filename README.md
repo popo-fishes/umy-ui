@@ -12,9 +12,9 @@
 
 > QQ交流2群: 939125115新群未满员
 
-[umy-ui官网](http://129.211.13.167/#/wel/index)
+[umy-ui官网](http://www.umyui.com/#/wel/index)
 
-[umy-ui文档](http://129.211.13.167/#/wel/index)
+[umy-ui文档](http://www.umyui.com/#/wel/index)
 
 
 
