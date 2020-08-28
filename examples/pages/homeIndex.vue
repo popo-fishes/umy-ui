@@ -16,6 +16,7 @@
           </div>
        </div>
     </div>
+    <p style="padding: 100px 0 30px 0;text-align: center;color: #606266;font-size: 14px">Copyright 2020 UmyUi | 蜀ICP备2020025971号</p>
   </div>
 </template>
 

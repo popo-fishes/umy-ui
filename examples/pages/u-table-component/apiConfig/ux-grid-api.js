@@ -250,6 +250,88 @@ export const data = [
                 type: 'string', optionalValue: 'default（点击展开按钮触发）, cell（点击单元格触发）, row（点击行触发）', defaultValue: 'default',
             }
         ]
+    },
+    {
+        parameter: 'tree-config',
+        explain: '树形结构配置项',
+        type: '—', optionalValue: '—', defaultValue: '—',
+        children: [
+            {
+                parameter: 'children',
+                explain: '树子节点的属性',
+                type: 'string', optionalValue: '—', defaultValue: 'children',
+            },
+            {
+                parameter: 'indent',
+                explain: '树节点的缩进',
+                type: 'number', optionalValue: '—', defaultValue: '20',
+            },
+            {
+                parameter: 'expandAll',
+                explain: '默认展开所有子孙树节点（只会在初始化时被触发一次）',
+                type: 'boolean', optionalValue: '—', defaultValue: 'false',
+            },
+            {
+                parameter: 'expandRowKeys',
+                explain: '默认展开指定树节点（只会在初始化时被触发一次，需要有 row-id）',
+                type: 'string[]', optionalValue: '—', defaultValue: '—',
+            },
+            {
+                parameter: 'accordion',
+                explain: '对于同一级的节点，每次只能展开一个',
+                type: 'boolean', optionalValue: '—', defaultValue: 'false',
+            },
+            {
+                parameter: 'trigger',
+                explain: '触发方式',
+                type: 'string', optionalValue: 'default（点击展开按钮触发）, cell（点击单元格触发）, row（点击行触发）', defaultValue: 'default',
+            },
+            {
+                parameter: 'lazy',
+                explain: '是否使用懒加载（启用后只有指定 hasChild 的节点才允许被点击）',
+                type: 'boolean', optionalValue: '-', defaultValue: 'false',
+            },
+            {
+                parameter: 'hasChild',
+                explain: '只对 lazy 启用后有效，标识是否存在子节点，从而控制是否允许被点击',
+                type: 'string', optionalValue: '-', defaultValue: 'hasChild',
+            },
+            {
+                parameter: 'loadMethod',
+                explain: '该方法 Function({ row }) 用于异步加载子节点',
+                type: 'Function', optionalValue: '-', defaultValue: '-',
+            },
+            {
+                parameter: 'reserve',
+                explain: '是否保留展开状态，对于某些场景可能会用到，比如数据被刷新之后还保留之前展开的状态（需要有 row-id）',
+                type: 'boolean', optionalValue: '-', defaultValue: 'false',
+            },
+            {
+                parameter: 'showIcon',
+                explain: '是否显示图标按钮',
+                type: 'boolean', optionalValue: '—', defaultValue: 'true',
+            },
+            {
+                parameter: 'iconOpen',
+                explain: '自定义展开后显示的图标 iconfont图标',
+                type: 'string', optionalValue: '—', defaultValue: '—',
+            },
+            {
+                parameter: 'iconClose',
+                explain: '自定义收起后显示的图标 iconfont图标',
+                type: 'string', optionalValue: '—', defaultValue: '—',
+            },
+            {
+                parameter: 'iconLoaded',
+                explain: '自定义懒加载中显示的图标 iconfont图标',
+                type: 'string', optionalValue: '—', defaultValue: '—',
+            },
+            {
+                parameter: 'line',
+                explain: '树节点的连接线（启用连接线）',
+                type: 'boolean', optionalValue: '—', defaultValue: 'false',
+            },
+        ]
     }
 ]
 /**
@@ -432,6 +514,11 @@ export const methodsData = [
         parameter: 'data'
     },
     {
+        methodsName: 'updateData',
+        explain: '手动处理数据（对于手动更改了排序、筛选...等条件后需要重新处理数据时可能会用到）',
+        parameter: '—'
+    },
+    {
         methodsName: 'tableExample',
         explain: '表格实例方式，调用就会返回table实例',
         parameter: '—'
@@ -455,6 +542,11 @@ export const methodsData = [
         methodsName: 'loadColumn',
         explain: '加载列配置（对于表格列需要重载、局部递增场景下可能会用到）',
         parameter: 'columns'
+    },
+    {
+        methodsName: 'refreshColumn',
+        explain: '刷新列配置（对于动态修改属性、显示/隐藏列等场景下可能会用到）',
+        parameter: '—'
     },
     {
         methodsName: 'setActiveRow',
@@ -557,11 +649,6 @@ export const methodsData = [
         parameter: 'column: Column, options: []'
     },
     {
-        methodsName: 'updateData',
-        explain: '手动处理数据（对于手动更改了排序、筛选...等条件后需要重新处理数据时可能会用到）',
-        parameter: '—'
-    },
-    {
         methodsName: 'toggleRowExpand(row)',
         explain: '用于 type=expand，切换展开行的状态',
         parameter: '—'
@@ -580,5 +667,35 @@ export const methodsData = [
         methodsName: 'clearRowExpand()',
         explain: '用于 type=expand，手动清空展开行状态，数据会恢复成未展开的状态',
         parameter: '—'
-    }
+    },
+    {
+        methodsName: 'setAllTreeExpand(checked)',
+        explain: '用于 tree-config，设置所有树节点的展开与否（如果是关闭所有树节点，可以使用 clearTreeExpand 快速清除）',
+        parameter: '—'
+    },
+    {
+        methodsName: 'clearTreeExpand()',
+        explain: '用于 tree-config，手动清空树形节点的展开状态，数据会恢复成未展开的状态',
+        parameter: '—'
+    },
+    {
+        methodsName: 'getTreeExpandRecords()',
+        explain: '用于 tree-config，用于树表格，获取已展开的节点（注意，即使父节点被收起，只要该节点还处于展开状态都能获取到）',
+        parameter: '—'
+    },
+    {
+        methodsName: 'toggleTreeExpand(row)',
+        explain: '用于 tree-config，切换展开树形节点的状态',
+        parameter: '—'
+    },
+    {
+        methodsName: 'setTreeExpand(rows, checked)',
+        explain: '用于 tree-config，设置展开树形节点，二个参数设置这一行展开与否',
+        parameter: '—'
+    },
+    {
+        methodsName: 'isTreeExpandByRow',
+        explain: '用于 tree-config，判断行是否为树形节点展开状态 返回 Boolean',
+        parameter: 'Row'
+    },
 ]

@@ -29,6 +29,7 @@ export default [
             {title: 'ux-grid虚拟', url: 'columnsAndRows'},
             {title: 'ux-grid多表头', url: 'multistageHeadUx'},
             {title: 'ux-grid展开行', url: 'expandRow'},
+            {title: 'ux-grid树表格', url: 'selectionTree'},
             {title: 'ux-grid反转', url: 'reverseTable'},
             {title: 'ux-grid筛选', url: 'ux-grid-screen'},
             {title: 'ux-grid用jsx自定义列', url: 'ux-grid-jsx'},

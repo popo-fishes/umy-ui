@@ -864,8 +864,8 @@
     .aplayer {
         position: fixed;
         left: 250px;
-        min-width: 500px;
-        max-width: 600px;
+        min-width: 200px;
+        max-width: 300px;
         top: 10px;
         z-index: 10000;
     }

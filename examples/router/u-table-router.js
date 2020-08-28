@@ -92,6 +92,11 @@ const virtualScrolling = [
         name: 'ux-grid展开行'
     },
     {
+        path: 'selectionTree',
+        component: () => import('../pages/u-table-component/virtualTableUsage/selectionTree.vue'),
+        name: 'ux-grid树表格'
+    },
+    {
         path: 'reverseTable',
         component: () => import('../pages/u-table-component/virtualTableUsage/reverseTable.md'),
         name: 'ux-grid反转'
