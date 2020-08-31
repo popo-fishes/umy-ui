@@ -24,9 +24,79 @@
     <meta name="description" content="umyui, umy-ui, umy ui, ui, UI库, vue ui库, 解决element表格卡顿">
     <meta name="keywords" content="umyui, umy-ui, UMY, umy, Umy Ui, UmyUi, umy ui, ui, UI库, vue ui库, 解决element表格卡顿, 解决表格大量数据卡顿, vue element列表大量数据卡顿">
     <title>umy-ui开发文档 - 为开发者准备的基于 Vue 2.0 的桌面端组件库，完美解决表格万级数据渲染卡顿问题</title>
-  <link rel="shortcut icon" href="/favicon.ico"><link href="/app.css?_=1c8b37dfb1fae4fc3b4c" rel="stylesheet"></head>
+  <link rel="shortcut icon" href="/favicon.ico"><link href="/app.css?_=2f773ca827bd55e52acf" rel="stylesheet"></head>
   <body>
     <div id="app"></div>
+    <div style="display: none">
+      <div class="desc width100">
+        <h1>网站快速成型工具</h1>
+        <h2 class="desc-text">为开发者准备的基于 Vue 2.0 的桌面端组件库; 流畅渲染表格万级数据</h2>
+        <img src="../assets/banner.png" class="banner">
+      </div>
+      <div class="waa desc">
+        <p class="card-title">四大利器，为您保驾护航</p>
+        <ui class="row">
+          <li class="col-md-3">
+            <div class="card-item"><img src="https://uviewui.com/index/guide.png">
+              <h3>文档</h3>
+              <p>涵盖umy-ui各个方面，给开发者方向指导和设计理念，让您茅塞顿开，一马平川 </p>
+            </div>
+          </li>
+          <li class="col-md-3">
+            <div class="card-item"><img src="https://uviewui.com/index/components.png">
+              <h3>组件</h3>
+              <p>众多组件覆盖开发过程的各个需求，组件功能丰富，u-table组件解决表格万级数据渲染卡顿问题。</p>
+            </div>
+          </li>
+          <li class="col-md-3">
+            <div class="card-item"><img src="https://uviewui.com/index/js.png">
+              <h3>工具库</h3>
+              <p>众多的贴心小工具，是您开发过程中召之即来的利器，让您飞镖在手，百步穿杨</p>
+            </div>
+          </li>
+          <li class="col-md-3">
+            <div class="card-item"><img src="https://uviewui.com/index/layout.png">
+              <h3>布局</h3>
+              <p>收集众多的常用页面和布局，减少开发者的重复工作，让您专注逻辑，事半功倍</p>
+            </div>
+          </li>
+        </ui>
+      </div>
+      <div class="width100 desc">
+        <p class="card-title">友情链接</p>
+        <div class="row overflowHidden">
+          <div class="link__wrap fl" v-for="(item, index) in LinksData" :key="index">
+            <a :href="item.url" target="_blank">
+              <img v-if="item.img" :src="item.img">
+              <div class="texts" v-if="item.title">{{ item.title }}</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="guanjianzi">
+        <p class="card-title">您可搜索如下关键字，即可找到umy-ui</p>
+        <h4>umyui</h4>
+        <h4>umy-ui</h4>
+        <h4>解决element表格卡顿</h4>
+        <h4>解决大数据表格卡顿</h4>
+        <h4>解决大量数据导致表格卡顿</h4>
+        <h4>vue ui组件库</h4>
+        <h4>vue,element列表大数据卡顿问题</h4>
+        <h4>vue列表渲染慢</h4>
+        <h4>element表格渲染慢</h4>
+        <h4>表格渲染慢（卡）</h4>
+        <h4>表格全选卡</h4>
+        <h4>表格数据多了就卡顿</h4>
+        <h4>element表格数据多了就卡顿</h4>
+        <h4>vue表格数据多了就卡顿</h4>
+        <h4>编辑表格卡顿问题</h4>
+        <h4>表格存在输入框就会卡顿</h4>
+        <h4>表格数据多了就卡死</h4>
+        <h4>表格数据多了就渲染慢</h4>
+        <h4>表格数据多了就卡顿</h4>
+      </div>
+      <p style="padding: 100px 0 30px 0;text-align: center;color: #606266;font-size: 14px">Copyright 2020 UmyUi | 蜀ICP备2020025971号</p>
+    </div>
     <script src="https://shadow.elemecdn.com/npm/vue@2.6.10/dist/vue.runtime.min.js"></script>
     <script src="https://shadow.elemecdn.com/npm/vue-router@3.1.5/dist/vue-router.min.js"></script>
     <script src="https://shadow.elemecdn.com/npm//vuex@3.0.1/dist/vuex.js"></script>
@@ -44,5 +114,5 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-  <script type="text/javascript" src="/static/js/app.b1c541c.js"></script></body>
+  <script type="text/javascript" src="/static/js/app.540509a.js"></script></body>
 </html>
