@@ -1,0 +1,33 @@
+{
+  "name": "umy-ui-examples",
+  "version": "1.0.0",
+  "description": "UmyUi开发文档",
+  "author": "penglei",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.5.3",
+    "@nuxtjs/markdownit": "^1.2.10",
+    "@nuxtjs/style-resources": "^0.1.2",
+    "axios": "^0.19.0",
+    "cross-env": "^5.2.0",
+    "element-ui": "^2.13.0",
+    "umy-table": "^1.0.8",
+    "mavon-editor": "^2.9.0",
+    "nuxt": "^2.4.0",
+    "vue-property-decorator": "^8.1.1"
+  },
+  "devDependencies": {
+    "aplayer": "^1.10.1",
+    "node-sass": "^4.14.1",
+    "nodemon": "^1.18.9",
+    "sass-loader": "^7.3.1",
+    "markdown-it-attrs": "^3.0.3",
+    "markdown-it-div": "^1.1.0"
+  }
+}

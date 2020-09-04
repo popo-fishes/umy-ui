@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+<loc>http://www.35dinghuo.com</loc>
+<priority>1.00</priority>
+<lastmod>2019-06-21</lastmod>
+<changefreq>Always</changefreq>
+</url>
+<url>
+<loc>http://www.35dinghuo.com/aboutUs</loc>
+<priority>0.80</priority>
+<lastmod>2019-06-21</lastmod>
+<changefreq>Always</changefreq>
+</url>
+<url>
+<loc>http://www.35dinghuo.com/newsCases</loc>
+<priority>0.80</priority>
+<lastmod>2019-06-21</lastmod>
+<changefreq>Always</changefreq>
+</url>
+<url>
+<loc>http://www.35dinghuo.com/newsInformation</loc>
+<priority>0.80</priority>
+<lastmod>2019-06-21</lastmod>
+<changefreq>Always</changefreq>
+</url>
+</urlset>

@@ -1,5 +1,5 @@
 <template>
-    <div id="aplayer" class="aplayer">
+    <div id="aplayer" :style="styleObj1" class="aplayer">
         <pre class="aplayer-lrc-content">
                 [ti:芒种]
                 [ar:音阙诗听/赵方婧]
@@ -778,13 +778,27 @@
 </template>
 
 <script>
-    import APlayer from 'APlayer'
+    // aplayer包含有window,但是服务端渲染 无window对象。这里需要判断是否处于服务端
+    if (process.client) {
+      var APlayer = require('aplayer')
+    }
     import Drag from '../utils/Drag'
     export default {
         name: "aplayer-mc",
+        props: {
+          value: {
+            type: Boolean,
+            default: false
+          }
+        },
+        data () {
+          return {
+            styleObj1: {minWidth: 66+ 'px', maxWidth: 400 + 'px'}
+          }
+        },
         mounted () {
             Drag()
-            const ap = new APlayer({
+            this.ap = new APlayer({
                 container: document.getElementById('aplayer'),
                 autoplay: true,
                 showlrc: true,
@@ -853,7 +867,28 @@
                     }
                 ]
             });
+            if (this.ap) {
+              this.ap.setMode(this.value ? 'mini' : 'normal')
+            }
+            this.setWidth()
         },
+        methods: {
+          setWidth () {
+             if (this.value) {
+                this.styleObj1 = {minWidth: 66 + 'px', maxWidth: 400 + 'px'}
+             } else {
+               this.styleObj1 = {minWidth: 500 + 'px', maxWidth: 600 + 'px'}
+             }
+          }
+        },
+        watch: {
+          value: function (val) {
+            if (this.ap) {
+              this.ap.setMode(val ? 'mini' : 'normal')
+            }
+            this.setWidth()
+          }
+        }
     }
 </script>
 
@@ -862,11 +897,9 @@
         color: $dh-color !important;
     }
     .aplayer {
-        position: fixed;
+        position: fixed !important;
         left: 250px;
-        min-width: 200px;
-        max-width: 300px;
-        top: 10px;
+        top: 60px;
         z-index: 10000;
     }
 </style>

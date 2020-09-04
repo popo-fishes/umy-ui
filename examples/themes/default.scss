@@ -1,7 +1,8 @@
 // 初始化样式
 * {box-sizing: border-box;}
-html, body, #app {
+html, body, #__nuxt, #__layout {
   height: 100%;width: 100%;
+  line-height: 1.5;
   font-size: 16px;box-sizing: border-box;
   font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
   margin: 0;padding: 0;background-color: $dh-bottom-color;}
