@@ -101,7 +101,6 @@
     "sinon": "^7.2.7",
     "sinon-chai": "^3.3.0",
     "style-loader": "^0.23.1",
-    "sortablejs": "^1.10.2",
     "transliteration": "^1.1.11",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "uppercamelcase": "^1.1.0",

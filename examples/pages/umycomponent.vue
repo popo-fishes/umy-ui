@@ -2,7 +2,7 @@
     <div class="page-component width100 height100">
         <el-scrollbar class="page-component__nav">
             <div class="jump-link">
-                <a href="https://uviewui.com/" target="_blank">
+                <a href="https://uviewui.com" target="_blank">
                     <img src="../assets/uview.png">
                 </a>
             </div>
@@ -68,7 +68,12 @@
         },
         computed:{
             activeUrl () {
-                return this.$store.state.url
+               let str = this.$store.state.url
+               if (str.charAt(str.length - 1) === '/') {
+                 return str.substring(0, str.length - 1)
+               } else {
+                 return this.$store.state.url
+               }
             },
             // 判断是否为自定义的md api页面，然后写不同的样式
             mdStyle () {

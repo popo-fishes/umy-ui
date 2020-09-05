@@ -809,61 +809,61 @@
                         name: '芒种',
                         artist: '赵方婧',
                         url: 'https://35dinghuo.oss-cn-hangzhou.aliyuncs.com/static/mangzhong.mp3',
-                        cover: 'http://129.211.13.167/music/mz.jpg'
+                        cover: 'https://www.umyui.com/music/mz.jpg'
                     },
                     {
                         name: '晴天',
                         artist: '周杰伦',
-                        url: 'http://129.211.13.167/music/qingtian.mp3',
-                        cover: 'http://129.211.13.167/music/zjl.png'
+                        url: 'https://www.umyui.com/music/qingtian.mp3',
+                        cover: 'https://www.umyui.com/music/zjl.png'
                     },
                     {
                         name: '鼓楼',
                         artist: '赵雷',
-                        url: 'http://129.211.13.167/music/gulou.mp3',
-                        cover: 'http://129.211.13.167/music/zhaolei.png'
+                        url: 'https://www.umyui.com/music/gulou.mp3',
+                        cover: 'https://www.umyui.com/music/zhaolei.png'
                     },
                     {
                         name: 'Shots',
                         artist: 'imagine dragons',
-                        url: 'http://129.211.13.167/music/Shots.mp3',
-                        cover: 'http://129.211.13.167/music/shots.png'
+                        url: 'https://www.umyui.com/music/Shots.mp3',
+                        cover: 'https://www.umyui.com/music/shots.png'
                     },
                     {
                         name: '有何不可',
                         artist: '许嵩',
-                        url: 'http://129.211.13.167/music/youhebuke.mp3',
-                        cover: 'http://129.211.13.167/music/xusong.png'
+                        url: 'https://www.umyui.com/music/youhebuke.mp3',
+                        cover: 'https://www.umyui.com/music/xusong.png'
                     },
                     {
                         name: '浪人琵琶',
                         artist: '胡66',
-                        url: 'http://129.211.13.167/music/langrenpipa.mp3',
-                        cover: 'http://129.211.13.167/music/hu66.png'
+                        url: 'https://www.umyui.com/music/langrenpipa.mp3',
+                        cover: 'https://www.umyui.com/music/hu66.png'
                     },
                     {
                         name: '最爱',
                         artist: '周慧敏',
-                        url: 'http://129.211.13.167/music/zuiai.mp3',
-                        cover: 'http://129.211.13.167/music/zhouhuimin.png'
+                        url: 'https://www.umyui.com/music/zuiai.mp3',
+                        cover: 'https://www.umyui.com/music/zhouhuimin.png'
                     },
                     {
                         name: '野孩子',
                         artist: '杨千嬅',
-                        url: 'http://129.211.13.167/music/yehaizi.mp3',
-                        cover: 'http://129.211.13.167/music/yangqianhua.png'
+                        url: 'https://www.umyui.com/music/yehaizi.mp3',
+                        cover: 'https://www.umyui.com/music/yangqianhua.png'
                     },
                     {
                         name: '淋雨一直走',
                         artist: '张韶涵',
-                        url: 'http://129.211.13.167/music/lyyzz.mp3',
-                        cover: 'http://129.211.13.167/music/zhangshaohan.png'
+                        url: 'https://www.umyui.com/music/lyyzz.mp3',
+                        cover: 'https://www.umyui.com/music/zhangshaohan.png'
                     },
                     {
                         name: 'Run Free',
                         artist: 'Deep Chills _ IVIE',
-                        url: 'http://129.211.13.167/music/runFree.mp3',
-                        cover: 'http://129.211.13.167/music/runFree.png'
+                        url: 'https://www.umyui.com/music/runFree.mp3',
+                        cover: 'https://www.umyui.com/music/runFree.png'
                     }
                 ]
             });
