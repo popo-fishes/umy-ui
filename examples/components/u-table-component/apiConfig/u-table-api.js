@@ -106,7 +106,7 @@ export const data = [
     },
     {
         parameter: 'row-key',
-        explain: '行数据的 Key，用来优化 Table 的渲染；在使用树形数据时,该属性是必填的',
+        explain: '在使用树形数据时,该属性是必填的,这是基础表格中的树需要用到。 (你需要注意：开启此属性如果同时开启use-virtual，代表你是个大数据树表格。如果你不是个大数据树表格请你不要2个属性同时开启！)',
         type: 'String', optionalValue: '—', defaultValue: '—',
     },
     {

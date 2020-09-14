@@ -2,9 +2,10 @@
     <div class="page-component width100 height100">
         <el-scrollbar class="page-component__nav">
             <div class="jump-link">
-                <a href="https://uviewui.com" target="_blank">
-                    <img src="../assets/uview.png">
-                </a>
+                <el-button plain @click="dialogVisible = true">成为赞助商</el-button>
+                <!--<a href="https://uviewui.com" target="_blank">-->
+                    <!--<img src="../assets/uview.png">-->
+                <!--</a>-->
             </div>
             <p class="title-pl beyond"
                :class="{ active: activeUrl === basics + 'updateLog' }"
@@ -39,6 +40,21 @@
         <div class="page-component__content">
             <nuxt-child class="content" :class="{ 'customMdclass': mdStyle }"/>
         </div>
+      <el-dialog
+        title="成为赞助商"
+        :visible.sync="dialogVisible"
+        width="40%"
+        :before-close="handleClose">
+        <div>
+          <p>如果您有品牌推广、活动推广、招聘推广、社区合作等需求，欢迎联系我们，成为赞助商。</p>
+          <p>您的广告将出现在umy-ui文档所有子页面及 GitHub Readme 等页面。</p>
+          <p>咨询QQ：403802162, 咨询邮箱:403802162@qq.com, 咨询微信号：travel196</p>
+        </div>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="dialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        </span>
+      </el-dialog>
     </div>
 </template>
 
@@ -49,6 +65,7 @@
         name: "umycomponent",
         data () {
             return {
+                dialogVisible: false,
                 basics: '/umycomponent/',
                 // show代表默认展开与否
                 componentsData: [
@@ -95,6 +112,9 @@
             openCom (fals, index) {
               this.componentsData[index].show = !fals
             },
+            handleClose () {
+               this.dialogVisible = false
+            },
             navLink (row) {
                 if (row.url) {
                     this.$router.push({
@@ -106,7 +126,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
  .page-component{
      .page-component__nav {
         width: 250px;
@@ -120,11 +140,17 @@
         height: calc(100% - 66px);
         bottom: 0;
         transition: padding-top .3s;
+
         .jump-link {
-            background-color: #ebebeb;
+            /*background-color: #ebebeb;*/
             width: 190px;
             margin-top: 20px;
             height: 75px;
+            line-height: 75px;
+            .el-button {
+              color: $dh-color !important;
+              border: 1px solid $dh-color !important;
+            }
             a{display: block;}
             img {width: 100%;height: 100%;}
         }

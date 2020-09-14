@@ -5,6 +5,11 @@
       <h2 class="desc-text">为开发者准备的基于 Vue 2.0 的桌面端组件库; 流畅渲染表格万级数据</h2>
       <img src="../assets/banner.png" class="banner">
     </div>
+    <div class="shiyong">
+      <p class="card-title2">国内使用umy-ui的地区分布图</p>
+      <p class="miaoshu">umy-ui完美解决表格数据多而导致卡问题，目前使用的人分布在全国各地及台湾。其中可以看出重要的IT城市，如北京，上海，深圳，广州，浙江，成都，武汉，南京等都有用户在使用！</p>
+      <img src="../assets/umyuifenbu.png">
+    </div>
     <div class="waa desc">
       <p class="card-title">四大利器，为您保驾护航</p>
       <ul class="row">
@@ -97,6 +102,22 @@
 
 <style scoped lang="scss">
   .homeIndex {padding-top: 50px;max-width: 1200px;margin: 0 auto;
+    .shiyong {width: 100%;text-align: center;
+      .card-title2 {
+        color: #303133;
+        font-size: 24px;
+        padding: 50px 0 20px 0;
+      }
+      .miaoshu {
+        margin: 0 auto;
+        font-size: 14px;
+        color: #5e6d82;
+        line-height: 2em;
+        width: 80%;
+        margin-bottom: 30px;
+      }
+      img {width: 750px;}
+    }
     .guanjianzi {
       text-align: center;
       padding: 50px 0;
