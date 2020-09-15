@@ -1,7 +1,12 @@
 <template>
   <div>
     <h3>jsx自定义模板</h3>
-    <ux-grid border show-overflow ref="plxTable" height="400" :columns="tableColumn"></ux-grid>
+    <ux-grid border
+             show-overflow
+             ref="plxTable"
+             height="400"
+             :edit-config="{trigger: 'click', mode: 'row'}"
+             :columns="tableColumn"></ux-grid>
     <pre class="hljs">
             <code>{{ demo[0] }}</code>
             <code>{{ demo[1] }}</code>
@@ -78,11 +83,34 @@
               }
             }
           },
+          {
+            field: 'sex1',
+            title: 'Sex2',
+            showHeaderOverflow: true,
+            editRender: true,
+            slots: {
+              default: ({ row, column }) => {
+                return [
+                  <span class="link" >{ row.sex1 }</span>
+              ]
+              },
+              edit: ({ row }) => {
+                return [
+                  <input type="text" v-model={ row.sex1 } />
+              ]
+              }
+            }
+          },
         ],
         demo: [
           `<template>
    <div>
-       <ux-grid border show-overflow ref="plxTable" height="400" :columns="tableColumn"></ux-grid>
+       <ux-grid border
+             show-overflow
+             ref="plxTable"
+             height="400"
+             :edit-config="{trigger: 'click', mode: 'row'}"
+             :columns="tableColumn"></ux-grid>
    </div>
 </template>`,
           ` export default {
@@ -153,6 +181,24 @@
                             }
                         }
                     },
+                     {
+                      field: 'sex1',
+                      title: 'Sex2',
+                      showHeaderOverflow: true,
+                      editRender: true,
+                      slots: {
+                        default: ({ row, column }) => {
+                          return [
+                            <span class="link" >{ row.sex1 }</span>
+                        ]
+                        },
+                        edit: ({ row }) => {
+                          return [
+                            <input type="text" v-model={ row.sex1 } />
+                        ]
+                        }
+                      }
+                    },
                 ]
             }
         },
@@ -162,6 +208,7 @@
                 name: 'pl' + idx,
                 sex: idx,
                 age: idx,
+                sex1: idx,
                 describe: '欢迎使用umy' + idx
             }))
             this.datas = data // 知道为啥datas不在 data()方法里面定义吗？嘻嘻
@@ -184,6 +231,7 @@
           name: 'pl' + idx,
           sex: idx,
           age: idx,
+          sex1: idx,
           describe: '欢迎使用umy' + idx
         }))
         this.datas = data // 知道为啥datas不在 data()方法里面定义吗？嘻嘻
