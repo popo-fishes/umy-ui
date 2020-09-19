@@ -4,10 +4,6 @@
 
 > umy-ui叫（U米-ui）
 
-> umy-ui集成了pl-table，也就说您使用了这个库呢，您就可以解决表格数据多，导致的一切问题！
-
-> 如果说您之前使用的pl-table,现在转umy-ui其实也很简单，您只需要安装umy-ui, 然后把pl-table组件改成u-table组件。具体请看文档吧！
-
 > (更多问题请加入umy-ui交流群吧), 不需要您的捐赠， 只需要点击上方的Star！！！
 
 > QQ交流1群: 675286117已满员
@@ -42,7 +38,7 @@
   <script src="https://unpkg.com/umy-ui/lib/index.js"></script>
   <!-- 真实项目不建议你直接引入  <script src="https://unpkg.com/umy-ui/lib/index.js"></script>-->
 
-  <!-- 这样去引如会直接下最新版本，如果你的项目打包发布了，然后遇见pl-table大更新 你可能项目会报错。-->
+  <!-- 这样去引如会直接下最新版本，如果你的项目打包发布了，然后遇见umy-ui大更新 你可能项目会报错。-->
 
   <!--推荐你这样引入： https://unpkg.com/umy-ui$1.0.1/lib/index.js   加入版本号！-->
   <!-- 这样去引如会直接下最新版本，如果你的项目打包发布了，然后遇见umy-ui大更新 你可能项目会报错。-->

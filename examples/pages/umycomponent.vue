@@ -2,10 +2,10 @@
     <div class="page-component width100 height100">
         <el-scrollbar class="page-component__nav">
             <div class="jump-link">
-                <el-button plain @click="dialogVisible = true">成为赞助商</el-button>
-                <!--<a href="https://uviewui.com" target="_blank">-->
-                    <!--<img src="../assets/uview.png">-->
-                <!--</a>-->
+                <!--<el-button plain @click="dialogVisible = true">成为赞助商</el-button>-->
+                <a href="http://www.vueshop.com.cn/index.php?http_referer=umyui" target="_blank">
+                    <img src="http://uviewui.com/customer/sdf1516355we0sd2.jpg">
+                </a>
             </div>
             <p class="title-pl beyond"
                :class="{ active: activeUrl === basics + 'updateLog' }"
@@ -145,8 +145,8 @@
             /*background-color: #ebebeb;*/
             width: 190px;
             margin-top: 20px;
-            height: 75px;
-            line-height: 75px;
+            height: 90px;
+            line-height: 90px;
             .el-button {
               color: $dh-color !important;
               border: 1px solid $dh-color !important;
