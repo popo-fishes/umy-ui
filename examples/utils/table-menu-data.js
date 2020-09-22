@@ -28,6 +28,7 @@ export default [
             {title: 'u-table树表格', url: 'virtualTreeTable'},
             {title: 'ux-grid虚拟', url: 'columnsAndRows'},
             {title: 'ux-grid多表头', url: 'multistageHeadUx'},
+            {title: '虚拟表格合并行列', url: 'mergeCells'},
             {title: 'ux-grid展开行', url: 'expandRow'},
             {title: 'ux-grid树表格', url: 'selectionTree'},
             {title: 'ux-grid反转', url: 'reverseTable'},
@@ -46,7 +47,8 @@ export default [
             {title: '点击触发', url: 'basicEditTable'},
             {title: '手动触发', url: 'manualTrigger'},
             {title: '插入行', url: 'InsertRow'},
-            {title: '全部显示', url: 'showAll'}
+            {title: '全部显示', url: 'showAll'},
+            {title: '表格校验', url: 'tableRules'}
         ]
     },
     {

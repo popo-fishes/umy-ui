@@ -128,6 +128,16 @@ export const data = [
         explain: '保持原始值的状态，被某些功能所依赖，比如编辑状态、还原数据等（开启后性能直线下降，具体取决于数据量）',
         type: 'boolean', optionalValue: '—', defaultValue: '—',
     },
+   {
+     parameter: 'merge-cells',
+     explain: '虚拟树合并单元格（不能用于树形结构、展开行，不建议用于固定列）',
+     type: 'Array<{ row: number, col: number, rowspan: number, colspan: number }>', optionalValue: '—', defaultValue: '—',
+   },
+   {
+     parameter: 'widthResize',
+     explain: '自动监听父元素的变化去重新计算表格',
+     type: 'boolean', optionalValue: '—', defaultValue: 'false',
+   },
     {
         parameter: 'show-header-overflow',
         explain: '设置表头所有内容过长时显示为省略号',
@@ -336,7 +346,41 @@ export const data = [
                 type: 'boolean', optionalValue: '—', defaultValue: 'false',
             },
         ]
-    }
+    },
+    {
+     parameter: 'valid-config',
+     explain: '校验配置项',
+     type: '—', optionalValue: '—', defaultValue: '—',
+     children: [
+      {
+        parameter: 'autoPos',
+        explain: '是否自动定位到校验不通过的单元格',
+        type: 'bolean', optionalValue: '—', defaultValue: 'true',
+      }
+    ]
+    },
+    {
+      parameter: 'rules',
+      explain: '校验规则配置项',
+      type: '—', optionalValue: '—', defaultValue: '—',
+      children: [
+        {
+          parameter: 'required',
+          explain: '是否必填',
+          type: 'bolean', optionalValue: '—', defaultValue: 'false',
+        },
+        {
+          parameter: 'validator',
+          explain: '自定义校验方法',
+          type: 'Function', optionalValue: '—', defaultValue: '—',
+        },
+        {
+          parameter: 'message',
+          explain: '校验提示内容',
+          type: 'string', optionalValue: '—', defaultValue: '—',
+        }
+      ]
+    },
 ]
 /**
  * ux-grid Events（表格事件）
@@ -707,4 +751,27 @@ export const methodsData = [
         explain: '用于 tree-config，判断行是否为树形节点展开状态 返回 Boolean',
         parameter: 'Row'
     },
+   {
+     methodsName: 'refreshScroll',
+     explain: '刷新滚动操作，手动同步滚动相关位置（对于某些特殊的操作，比如滚动条错位、固定列不同步）',
+     parameter: '—'
+   },
+  {
+    methodsName: 'validate',
+    explain: '1. 快速校验，如果存在校验不通过的行，则返回不再继续校验；' +
+      '2. 如果第一个参数为 true 则校验当前表格数据，' +
+      '3. 如果指定 row 或 rows 则校验指定行或多行，' +
+      '4. 返回一个 promise',
+    parameter: '—'
+  },
+  {
+    methodsName: 'fullValidate',
+    explain: '完整校验，和 validate 的区别就是会给有效数据中的每一行进行校验',
+    parameter: '—'
+  },
+  {
+    methodsName: 'clearValidate',
+    explain: '手动清除校验',
+    parameter: '—'
+  }
 ]

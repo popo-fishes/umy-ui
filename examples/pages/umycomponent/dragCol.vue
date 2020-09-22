@@ -71,10 +71,10 @@
                 this.$nextTick(() => {
                     let plxTable = this.$refs.plxTable
                     // 关于sortable的配置https://www.cnblogs.com/xiangsj/p/6628003.html
-                    this.sortable = Sortable.create(plxTable.$el.querySelector('.body--wrapper .plx-table--header .plx-header--row'), {
-                        // 列表项中的拖动控制柄选择器 拖拽区域，默认为 .plx-header--row 的 子元素，
-                        // 下面（这个意思呢）是排除掉plx-header--column拖拽列中的固定列部分
-                        handle: '.plx-header--column:not(.col--fixed)',
+                    this.sortable = Sortable.create(plxTable.$el.querySelector('.body--wrapper .elx-table--header .elx-header--row'), {
+                        // 列表项中的拖动控制柄选择器 拖拽区域，默认为 .elx-header--row 的 子元素，
+                        // 下面（这个意思呢）是排除掉elx-header--column拖拽列中的固定列部分
+                        handle: '.elx-header--column:not(.col--fixed)',
                         ghostClass: 'dragColbg',
                         chosenClass: 'dragColbg',
                         // 拖拽结束
@@ -114,7 +114,7 @@
     .dragColbg {
         background-color: #409eff;
     }
-    .sortable-column-demo .plx-header--row .plx-header--column.col--fixed {
+    .sortable-column-demo .elx-header--row .elx-header--column.col--fixed {
         cursor: no-drop;
     }
 </style>

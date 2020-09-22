@@ -66,8 +66,8 @@
                 this.$nextTick(() => {
                     let plxTable = this.$refs.plxTable
                     // 关于sortable的配置https://www.cnblogs.com/xiangsj/p/6628003.html
-                    this.sortable = Sortable.create(plxTable.$el.querySelector('.body--wrapper .plx-table--body tbody'), {
-                        handle: ".plx-body--row",  // Drag handle selector within list items
+                    this.sortable = Sortable.create(plxTable.$el.querySelector('.body--wrapper .elx-table--body tbody'), {
+                        handle: ".elx-body--row",  // Drag handle selector within list items
                         // 拖拽结束
                         onEnd: ({ item, newIndex, oldIndex }) => {
                             let currRow = this.tableData.splice(oldIndex, 1)[0]

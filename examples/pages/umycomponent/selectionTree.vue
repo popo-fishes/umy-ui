@@ -19,7 +19,7 @@
       height="400"
       :checkbox-config="{highlight: true}"
       @selection-change="selectChangeEvent">
-      <ux-table-column type="checkbox" width="280" tree-node></ux-table-column>
+      <ux-table-column type="checkbox" width="280" fixed="left" tree-node></ux-table-column>
       <ux-table-column field="name" title="Name" width="200"></ux-table-column>
       <ux-table-column field="size" title="Size" width="200"></ux-table-column>
       <ux-table-column field="type" title="Type" width="200"></ux-table-column>
@@ -35,7 +35,7 @@
         ref="plxTree2"
         row-id="id"
         height="400"
-        :tree-config="{lazy: true, children: 'children', hasChild: 'hasChildren', iconLoaded: 'el-icon-loading', loadMethod: loadChildrenMethod}"
+        :tree-config="{lazy: true, children: 'children', hasChild: 'hasChildren', loadMethod: loadChildrenMethod}"
         :data="tableDataLazy">
         <ux-table-column field="name" title="Name" width="400" tree-node></ux-table-column>
         <ux-table-column field="size" title="Size"></ux-table-column>

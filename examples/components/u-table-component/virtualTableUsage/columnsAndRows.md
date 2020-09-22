@@ -68,7 +68,7 @@
                       id: idx,
                       label: idx > 2 ? col[2] : col[idx],
                       fixed: idx < 3 ? 'left' : '',
-                      width: 200,
+                      width: this.rnd(50, 300),
                       sortable: idx === 1,
                       resizable: true
               }))
@@ -83,6 +83,10 @@
            })
       },
       methods: {
+          rnd(n, m){
+            var random = Math.floor(Math.random()*(m-n+1)+n);
+            return random;
+          },
        setHei (val) {
          this.height = val
        },

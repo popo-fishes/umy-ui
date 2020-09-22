@@ -133,7 +133,9 @@
       },
       // 点击编辑按钮，激活行状态-> 为编辑状态
       editRowEvent (row) {
-        this.$refs.plxTable.setActiveRow(row)
+        // 如何表格有合并列行就需要这样去激活编辑，age是一个列的field字段，第二个参数必须是有效的列
+        this.$refs.plxTable.setActiveCell(row, 'age')
+        // 如果表格不存在合并列行 你可以调用setActiveRow(row) 这个方法
       },
       // 取消
       cancelRowEvent (row) {

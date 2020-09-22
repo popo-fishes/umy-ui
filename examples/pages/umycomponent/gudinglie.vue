@@ -31,6 +31,7 @@
       <u-table-column
         prop="address"
         label="地址"
+        show-overflow-tooltip
         width="300">
       </u-table-column>
       <u-table-column

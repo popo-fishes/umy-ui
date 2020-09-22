@@ -147,6 +147,8 @@
             margin-top: 20px;
             height: 90px;
             line-height: 90px;
+            border-radius: 5px;
+            overflow: hidden;
             .el-button {
               color: $dh-color !important;
               border: 1px solid $dh-color !important;
