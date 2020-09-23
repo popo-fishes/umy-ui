@@ -46,7 +46,7 @@ export default {
   */
   plugins: [
     { src: '~/plugins/ElementUI', ssr: true }, // ssr:true代表在服务端渲染,客户端不渲染
-    { src: '~/plugins/UmyUi', ssr: true }, // umyui
+    { src: '~/plugins/UmyUi', ssr: false }, // umyui
     { src: '~/plugins/permission', ssr: false } // 权限拦截
   ],
   /*

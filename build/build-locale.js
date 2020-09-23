@@ -29,7 +29,7 @@ fileList
         var code = result.code;
 
         code = code
-          .replace('define(\'', 'define(\'pl-table/locale/')
+          .replace('define(\'', 'define(\'umy-ui/locale/')
           .replace('global.', 'global.UMYUI.lang = global.UMYUI.lang || {}; \n    global.UMYUI.lang.');
         save(resolve(__dirname, '../lib/umd/locale', file)).write(code);
 

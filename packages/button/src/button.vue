@@ -1,5 +1,4 @@
 <template>
-
     <button class="u-button"
             :class="[[`icon-${position}`],
              typeStyle,sizeStyle,plainStyle,dangerStyle,dashedStyle,loadingStyle,circleStyle]

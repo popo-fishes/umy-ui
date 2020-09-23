@@ -33,10 +33,10 @@
             vals: '',
             height: 0,
             rowHeight: 50,
-            columns: Array.from({ length: 20 }, (_, idx) => ({
+            columns: Array.from({ length: 10 }, (_, idx) => ({
               prop: 'address', id: idx, label: '地址地址地址地址地址地址地址地址地址地址地址' + idx, width: 200
             })),
-            tableData: Array.from({ length: 500 }, (_, idx) => ({
+            tableData: Array.from({ length: 100 }, (_, idx) => ({
               id: idx + 1,
               date: '2016-05-03',
               name: 1,

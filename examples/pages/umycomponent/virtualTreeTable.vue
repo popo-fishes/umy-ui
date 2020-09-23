@@ -2,7 +2,7 @@
   <div>
     <h3>虚拟树形表格(基础虚拟，不解决列多情况)</h3>
     <p>建议开启使用：show-body-overflow 和 show-header-overflow 。</p>
-    <p>必须指定 row-key  必须开启use-virtual。</p>
+    <p>必须指定 row-id  必须开启use-virtual。</p>
     <p>（注意：不给height或者不给maxheight，又或者给的是0，use-virtual直接会关闭）。 树且不能用，不能展开 。</p>
     <p>虚拟树形表格不支持表格存在 selection 复选框, 关于treeConfig配置呢 看文档吧。</p>
     <p>`data`对象数组后，大量数据不建议使用双向绑定的 data 属性（vue 监听会大数据会短暂的卡顿），建议使用 reloadData 函数,请看表格方法</p>
@@ -23,7 +23,7 @@
         :treeConfig="{children: 'children', expandAll: false}"
         @toggle-tree-expand="toggleTreeExpand"
         use-virtual
-        row-key="id"
+        row-id="id"
         border>
         <!--u-table大数据表格 你需要在列上指定某个列显示展开收起 treeNode属性-->
         <u-table-column

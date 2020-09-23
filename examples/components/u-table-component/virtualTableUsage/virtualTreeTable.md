@@ -17,7 +17,7 @@
           :treeConfig="{children: 'children', expandAll: false}"
           @toggle-tree-expand="toggleTreeExpand"
           use-virtual
-          row-key="id"
+          row-id="id"
           border>
               <!--u-table大数据表格 你需要在列上指定某个列显示展开收起 treeNode属性-->
               <u-table-column

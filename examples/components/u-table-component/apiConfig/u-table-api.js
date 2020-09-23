@@ -104,10 +104,15 @@ export const data = [
         explain: '合计行第一列的文本',
         type: 'String', optionalValue: '—', defaultValue: '合计',
     },
+  {
+    parameter: 'row-key',
+    explain: '行数据的 Key，用来优化 Table 的渲染；在使用树形表格时,（注意这个属性不是虚拟树表格，是一个普通的树）该属性是必填的',
+    type: 'String', optionalValue: '—', defaultValue: '—',
+  },
     {
-        parameter: 'row-key',
-        explain: '在使用树形数据时,该属性是必填的,这是基础表格中的树需要用到。 (你需要注意：开启此属性如果同时开启use-virtual，代表你是个大数据树表格。如果你不是个大数据树表格请你不要2个属性同时开启！)',
-        type: 'String', optionalValue: '—', defaultValue: '—',
+      parameter: 'row-id',
+      explain: '行数据的 id；在使用虚拟树表格时,该属性是必填的',
+      type: 'String', optionalValue: '—', defaultValue: '—',
     },
     {
         parameter: 'span-method',
@@ -208,7 +213,7 @@ export const data = [
     },
     {
         parameter: 'use-virtual',
-        explain: '是否开启虚拟滚动 (解决大数据渲染卡顿问题)， 不开启row-key代表是个大数据表格，开启row-key代表是个大数据树型表格',
+        explain: '是否开启虚拟滚动 (解决大数据渲染卡顿问题)',
         type: 'Boolean', optionalValue: '—', defaultValue: 'false',
     },
     {
@@ -218,7 +223,7 @@ export const data = [
     },
     {
         parameter: 'tree-config',
-        explain: 'u-table大数据树形表格配置项，必去开启row-key 且 开启use-virtual 才有效的配置',
+        explain: 'u-table大数据树形表格配置项，必去开启row-id 且 开启use-virtual 才有效的配置',
         type: 'Object', optionalValue: '—', defaultValue: "{ children: 'children', .... }",
         children: [
             {
@@ -419,7 +424,7 @@ export const methodsData = [
     },
     {
         methodsName: 'toggleRowSelection',
-        careful: '注意：开启row-key且开启use-virtual且存在复选框，代表是个大数据树型表格带上复选框，如果你在按照你的原始数据（原始数据的意思就是你赋值给我表格的数据）' +
+        careful: '注意：开启row-id且开启use-virtual且存在复选框，代表是个大数据树型表格带上复选框，如果你在按照你的原始数据（原始数据的意思就是你赋值给我表格的数据）' +
             '，中的row传递给我去勾选可能勾选不上。此时你可能需要虚拟树处理后的数据中的row去勾选。那么你需要用到这个方法getUTreeData，具体请看这个方法getUTreeData',
         explain: '用于表格多选，切换某一行的选中状态。obj如果使用了第二个参数，则是设置这一行选中与否（selected 为 true 则选中）',
         parameter: 'rows 格式: [{  row: row, selected: true || false }]'
