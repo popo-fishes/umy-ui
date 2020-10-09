@@ -26,6 +26,7 @@ export default [
             {title: 'u-table多表头', url: 'groupHeader'},
             {title: 'u-table多选框', url: 'virtualCheckboxTable'},
             {title: 'u-table树表格', url: 'virtualTreeTable'},
+            {title: 'u-table树表格懒加载', url: 'virtualTreeTableLazy'},
             {title: 'ux-grid虚拟', url: 'columnsAndRows'},
             {title: 'ux-grid多表头', url: 'multistageHeadUx'},
             {title: '虚拟表格合并行列', url: 'mergeCells'},

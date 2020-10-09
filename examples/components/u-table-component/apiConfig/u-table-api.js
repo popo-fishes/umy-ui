@@ -253,6 +253,18 @@ export const data = [
             {
                 parameter: 'expandRowKeys', explain: '默认展开指定树节点（只会在初始化时被触发一次，需要有 row-key属性值的字段）',
                 type: "Array", optionalValue: '—', defaultValue: "—",
+            },
+            {
+              parameter: 'hasChildren', explain: '标识是否存在子节点，从而控制是否允许被点击',
+              type: "string", optionalValue: '—', defaultValue: "hasChildren",
+            },
+            {
+              parameter: 'lazy', explain: '是否使用懒加载（启用后只有指定 hasChild 的节点才允许被点击）',
+              type: "Boolean", optionalValue: '—', defaultValue: "false",
+            },
+            {
+              parameter: 'load', explain: '加载子节点数据的函数，lazy 为 true 时生效，函数第二个参数返回子节点',
+              type: "Function", optionalValue: '—', defaultValue: "Function(row, resolve)",
             }
         ]
     },

@@ -773,5 +773,10 @@ export const methodsData = [
     methodsName: 'clearValidate',
     explain: '手动清除校验',
     parameter: '—'
+  },
+  {
+    methodsName: 'getTableData',
+    explain: '获取当前表格的数据（完整的全量表体数据、处理条件之后的全量表体数据、当前渲染中的表体数据、当前渲染中的表尾数据）',
+    parameter: '{fullData, visibleData, tableData, footerData}'
   }
 ]

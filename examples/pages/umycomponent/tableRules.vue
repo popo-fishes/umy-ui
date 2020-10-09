@@ -9,6 +9,7 @@
             <el-button @click="$refs.plxTable.removeCheckboxRow()">删除选中</el-button>
             <el-button @click="validAllEvent">整个表格校验</el-button>
             <el-button @click="fullValidEvent">校验</el-button>
+            <el-button @click="submitEvents">提交表格数据</el-button>
         </p>
         <ux-grid border
                  show-overflow
@@ -156,6 +157,12 @@
                     }
                     console.log(data)
                 })
+            },
+            // 提交表格数据
+            submitEvents () {
+              // 获取当前表格的数据（完整的全量表体数据、处理条件之后的全量表体数据、当前渲染中的表体数据、当前渲染中的表尾数据）
+              // {fullData, visibleData, tableData, footerData}
+              console.log(this.$refs.plxTable.getTableData())
             }
         }
     }
