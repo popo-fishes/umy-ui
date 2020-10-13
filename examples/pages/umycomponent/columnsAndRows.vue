@@ -3,6 +3,7 @@
     <h3>列和行同时虚拟(解决多行列多情况)</h3>
     <p>大数据不建议使用双向绑定的 data 属性（vue 监听会大数据会短暂的卡顿），建议使用reloadData函数 。</p>
     <p>多行多列，你可以使用ux-grid哦  注：如果要启用横向虚拟滚动，不支持分组表头 。</p>
+    <p>当某一行被鼠标右键点击时会触发该事件 绑定row-contextmenu事件</p>
     <div>
       <p style="margin: 20px 0;">
         <el-button @click="setHei(400)">设置高度为400</el-button>
@@ -18,6 +19,7 @@
         :height="height"
         :checkboxConfig="{checkMethod: selectable, highlight: true}"
         @selection-change="selectionChange"
+        @row-contextmenu="rowContextmenu"
         @table-body-scroll="scroll"
         show-header-overflow="ellipsis">
         <ux-table-column type="checkbox" width="80"/>
@@ -118,6 +120,10 @@
       },
       selectable ({row}) {
         return row.id !== 2
+      },
+      // 当某一行被鼠标右键点击时会触发该事件
+      rowContextmenu (row, column, event) {
+        console.log('当某一行被鼠标右键点击时会触发该事件', row, column, event)
       },
       toggleSelection(rows, type) {
         if (rows) {

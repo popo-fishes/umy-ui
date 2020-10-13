@@ -4,7 +4,8 @@
     <p>建议开启使用：show-body-overflow 和 show-header-overflow</p>
     <p>（注：启用纵向虚拟滚的后不支持动态行高，如果要支持动态行高，将虚拟滚动关闭即可）。</p>
     <p> (注：数据变化默认会滚动到顶部，你可以关闭data-changes-scroll-top就不会滚动到顶部啦！)</p>
-    <p>当`u-table`元素中注入`data`对象数组后，大量数据不建议使用双向绑定的 data 属性（vue 监听会大数据会短暂的卡顿），建议使用 reloadData 函数,请看表格方法)。</p>
+    <p>(注：当`u-table`元素中注入`data`对象数组后，大量数据不建议使用双向绑定的 data 属性（vue 监听会大数据会短暂的卡顿），建议使用 reloadData 函数,请看表格方法)。</p>
+    <p>(注： 监听表格滚动到了底部? 你可以绑定table-body-scroll事件， 第四个参数可以判断是否到底部了哦！</p>
     <div>
       <p style="margin: 20px 0;">
         <el-button @click="setData(3)">变化数据为3条</el-button>
@@ -19,6 +20,7 @@
         ref="plTable"
         :max-height="height"
         use-virtual
+        @table-body-scroll="tableScroll"
         :data-changes-scroll-top="radio === 1"
         :row-height="rowHeight"
         border>
@@ -69,6 +71,10 @@
           address: 1 + idx
         }))
         this.$refs.plTable.reloadData(data)
+      },
+      tableScroll ({scrollTop, scrollLeft, table, judgeFlse}) {
+        // {scrollTop， scrollLeft, table, judgeFlse: 这个参数返回一个boolean值，为true则代表表格滚动到了底部了，false没有滚动到底部，必须开起大数据渲染模式才能有值哦}, event
+        console.log(scrollTop, scrollLeft, table, judgeFlse)
       }
     }
   }

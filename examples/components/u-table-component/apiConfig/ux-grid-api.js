@@ -143,6 +143,11 @@ export const data = [
         explain: '设置表头所有内容过长时显示为省略号',
         type: 'boolean/string', optionalValue: 'ellipsis（只显示省略号, 默认）,title（并且显示为原生 title）', defaultValue: '—',
     },
+  {
+    parameter: 'show-footer-overflow',
+    explain: '设置表尾所有内容过长时显示为省略号',
+    type: 'boolean/string', optionalValue: 'ellipsis（只显示省略号）,title（并且显示为原生 title）', defaultValue: '—',
+  },
     {
         parameter: 'show-overflow',
         explain: '设置所有内容过长时显示为省略号',

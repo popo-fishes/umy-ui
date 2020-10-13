@@ -401,7 +401,7 @@ export const eventsData = [
     {
         eventName: 'table-body-scroll',
         explain: '当表体滚动时触发，无论横向还是竖向',
-        parameter: '{scrollTop， scrollLeft, table}, event'
+        parameter: '{scrollTop， scrollLeft, table, judgeFlse: 这个参数返回一个boolean值，为true则代表表格滚动到了底部了，false没有滚动到底部，必须开起大数据渲染模式才能有值哦}, event'
     },
     {
         eventName: 'sort-change',

@@ -14,6 +14,7 @@
           ref="plTable"
           :max-height="height"
           use-virtual
+          @table-body-scroll="tableScroll"
           :data-changes-scroll-top="radio === 1"
           :row-height="rowHeight"
           border>
@@ -56,7 +57,11 @@
                 address: 1 + idx
             }))
             this.$refs.plTable.reloadData(data)
-          }
+          },
+           tableScroll ({scrollTop, scrollLeft, table, judgeFlse}) {
+              // {scrollTop， scrollLeft, table, judgeFlse: 这个参数返回一个boolean值，为true则代表表格滚动到了底部了，false没有滚动到底部，必须开起大数据渲染模式才能有值哦}, event
+              console.log(scrollTop, scrollLeft, table, judgeFlse)
+            }
       }
     }
   </script>

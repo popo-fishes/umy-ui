@@ -189,27 +189,34 @@ export const data = [
             {
                 parameter: 'default',
                 explain: '自定义显示内容模板',
-                type: '如template上写 v-slot="{row, rowIndex, column, columnIndex}"', optionalValue: '—', defaultValue: '{row, rowIndex, column, columnIndex}'
+                type: '如template上写 v-slot="{row, rowIndex, $rowIndex, column, columnIndex, $columnIndex, _columnIndex}"', optionalValue: '—',
+              defaultValue: '{row, rowIndex, $rowIndex, column, columnIndex, $columnIndex, _columnIndex}'
             },
             {
                 parameter: 'header',
                 explain: '自定义表头内容的模板',
-                type: '如template上写 v-slot:header="scope是个对象，里面就是这个:{row, rowIndex, column, columnIndex}"', optionalValue: '—', defaultValue: '{row, rowIndex, column, columnIndex}'
+                type: '如template上写 v-slot:header="scope是个对象',
+              optionalValue: '—', defaultValue: '{column, columnIndex, $columnIndex, _columnIndex, $rowIndex}'
             },
+          {
+            parameter: 'footer',
+            explain: '自定义表尾内容的模板',
+            type: '如template上写 v-slot:footer="scope"', optionalValue: '—', defaultValue: '{column, columnIndex, $columnIndex, _columnIndex, $rowIndex, items}'
+          },
             {
                 parameter: 'content',
                 explain: '只对 type=expand 有效，自定义展开后的内容模板',
-                type: '如template上写 v-slot:expand="scope"', optionalValue: '—', defaultValue: '{row, rowIndex, column, columnIndex}'
+                type: '如template上写 v-slot:content="scope"', optionalValue: '—', defaultValue: '{row, rowIndex, $rowIndex, column}'
             },
             {
                 parameter: 'filter',
                 explain: '只对 filter-render 启用时有效，自定义筛选模板',
-                type: '如template上写 v-slot:filter="scope"', optionalValue: '—', defaultValue: '{column, columnIndex}'
+                type: '如template上写 v-slot:filter="scope"', optionalValue: '—', defaultValue: '{column, columnIndex, $columnIndex}'
             },
             {
                 parameter: 'edit',
                 explain: '只对 edit-render 启用时有效，自定义可编辑组件模板',
-                type: '如template上写 v-slot:edit="scope"', optionalValue: '—', defaultValue: '{row, rowIndex, column, columnIndex}'
+                type: '如template上写 v-slot:edit="scope"', optionalValue: '—', defaultValue: '{row, rowIndex, $rowIndex, column, columnIndex, $columnIndex, _columnIndex}'
             }
         ]
     }
