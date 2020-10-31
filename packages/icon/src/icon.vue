@@ -1,11 +1,11 @@
 <template>
-    <svg class="f-icon" @click="$emit('click',$event)" :style="{fill:`${color}`,fontSize: fontWidth}" :class="{loading:loading}">
+    <svg class="u-icon" @click="$emit('click',$event)" :style="{fill:`${color}`,fontSize: fontWidth}" :class="{loading:loading}">
         <use :xlink:href="`#icon-${name}`"></use>
     </svg>
 </template>
 
 <script>
-    import '../../../src/svg.js'
+    import '../../../tools/utils/svg.js'
     import {isString,isNumber} from "../../../tools/utils/types"
 
     export default {
@@ -33,23 +33,3 @@
         }
     }
 </script>
-
-<style scoped lang="scss">
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    .f-icon {
-        width: 1em;
-        height: 1em;
-
-        &.loading {
-            animation: spin 1s infinite linear;
-        }
-    }
-</style>

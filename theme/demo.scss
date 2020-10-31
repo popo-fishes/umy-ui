@@ -1,6 +1,0 @@
-@import "mixins/mixins";
-@import "common/var";
-
-@include b(demo) {
-  background: $--color-primary;
-}

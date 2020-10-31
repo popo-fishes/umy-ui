@@ -242,6 +242,10 @@ export const data = [
                 parameter: 'iconClose', explain: '自定义收起后显示的图标,暂无(没时间做)',
                 type: 'String', optionalValue: '—', defaultValue: "—",
             },
+           {
+             parameter: 'accordion', explain: '同级节点展示一个,暂无(没时间做)',
+             type: 'Boolean', optionalValue: '—', defaultValue: "false",
+           },
             {
                 parameter: 'expandAll', explain: '默认展开所有子孙树节点（只会在初始化时被触发一次）',
                 type: 'Boolean', optionalValue: '—', defaultValue: "false",
@@ -479,7 +483,7 @@ export const methodsData = [
     {
         methodsName: 'reloadData',
         explain: '绑定表格数据方法，写了这个最好不要使用属性data方式绑定表格数据，二选其一',
-        parameter: 'data表格数据  实例： this.$refs.plTable.reloadData(我就是表格数据啦)'
+        parameter: 'data表格数据  实例： this.$refs.plTable.reloadData(我就是表格数据啦) // 返回一个Promise'
     },
     {
         methodsName: 'scrollBottom',
@@ -531,4 +535,9 @@ export const methodsData = [
         explain: '用于u-table虚拟表格树，切换展开树形节点的状态',
         parameter: 'row'
     },
+    {
+      methodsName: 'partRowSelections',
+      explain: '用于u-table虚拟多选表格，切换选中状态,适用于选中很多，取消很多',
+      parameter: 'rows, state: boolean'
+    }
 ]

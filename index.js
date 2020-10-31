@@ -1,6 +1,7 @@
 /* 自动生成者来着 './build/build-entry.js' */
 
-import Demo from './packages/demo/index.js';
+import Button from './packages/button/index.js';
+import Icon from './packages/icon/index.js';
 import UTableColumn from './packages/u-table-column/index.js';
 import UTable from './packages/u-table/index.js';
 import UxGrid from './packages/ux-grid/index.js';
@@ -10,7 +11,8 @@ import locale from 'umy-ui/tools/locale';
 import tableLocale from 'umy-table/lib/locale'
 
 const components = [
-  Demo,
+  Button,
+  Icon,
   UTableColumn,
   UTable,
   UxGrid,
@@ -39,11 +41,12 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.1.2',
+  version: '1.1.3',
   locale: locale.use,
   i18n: locale.i18n,
   install,
-  Demo,
+  Button,
+  Icon,
   UTableColumn,
   UTable,
   UxGrid,

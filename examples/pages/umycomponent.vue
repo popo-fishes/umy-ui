@@ -15,7 +15,8 @@
             <div class="menuList">
                 <div class="item-pl" v-for="(item, index) in componentsData" :key="index">
                     <p class="title-pl beyond" :title="item.title">
-                        <span v-if="item.title !== '起步'" @click="openCom(item.show, index)" class="icon-us user-select">
+                        <!--title为起步或者组件，则不能收起隐藏-->
+                        <span v-if="item.title !== '起步' && item.title !== '组件'" @click="openCom(item.show, index)" class="icon-us user-select">
                              {{ item.title }}
                              <span class="u-table-word-icon">
                                  <i :class="[item.show ? 'el-icon-arrow-up' : 'el-icon-arrow-down']"></i>
@@ -23,8 +24,7 @@
                         </span>
                         <span v-else>{{ item.title }}</span>
                     </p>
-                    <!--如果当前是展开状态 或者是“起步” 就直接展示子集-->
-                    <ul class="list-pl" v-if="item.show || item.title === '起步'">
+                    <ul class="list-pl" v-if="item.show">
                         <li class="nav-item-c"
                             v-for="(child, inx) in item.list"
                             @click="navLink(child)"
@@ -60,6 +60,7 @@
 
 <script>
     import tableMenuData from '../utils/table-menu-data'
+    import umyuiMenuData from '../utils/umy-ui-component'
     // 二级固定 /wel
     export default {
         name: "umycomponent",
@@ -71,6 +72,7 @@
                 componentsData: [
                     {
                         title: '起步',
+                        show: true,
                         list: [
                             {title: '介绍', url: 'intro'},
                             {title: '安装', url: 'installation'},
@@ -79,6 +81,7 @@
                             {title: '用前须知', url: 'noticeBefore'}
                         ]
                     },
+                    ...umyuiMenuData,
                     ...tableMenuData
                 ]
             }
@@ -96,7 +99,8 @@
             mdStyle () {
                 const url = this.$store.state.url
                 return url === '/umycomponent/u-table-column-api' ||
-                    url === '/umycomponent/paginationAndSideslipFrame'
+                    url === '/umycomponent/paginationAndSideslipFrame' ||
+                    url === '/umycomponent/ubutton'
             },
         },
         mounted () {

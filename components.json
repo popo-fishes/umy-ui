@@ -1,5 +1,6 @@
 {
-  "demo": "./packages/demo/index.js",
+  "button": "./packages/button/index.js",
+  "icon": "./packages/icon/index.js",
   "u-table-column": "./packages/u-table-column/index.js",
   "u-table": "./packages/u-table/index.js",
   "ux-grid": "./packages/ux-grid/index.js",

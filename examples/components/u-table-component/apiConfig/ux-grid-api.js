@@ -109,19 +109,9 @@ export const data = [
         type: 'Function({$rowIndex, column, columnIndex, $columnIndex})/Object', optionalValue: '—', defaultValue: '—',
     },
     {
-        parameter: 'default-sort',
-        explain: '默认的排序列的 field和顺序。它的field属性指定默认的排序的列,order指定默认排序的顺序',
-        type: 'Object', optionalValue: 'order: asc, desc', defaultValue: '',
-    },
-    {
         parameter: 'empty-text',
         explain: '空数据时显示的文本内容,也可以通过 slot="empty" 设置',
         type: 'String', optionalValue: '—', defaultValue: '暂无数据',
-    },
-    {
-        parameter: 'sort-method',
-        explain: '全局排序方法，当触发排序时会调用该函数 Function({ data, column, property, order }) 返回排序后的列表',
-        type: 'Function', optionalValue: '—', defaultValue: '—',
     },
     {
         parameter: 'keep-source',
@@ -364,6 +354,48 @@ export const data = [
       }
     ]
     },
+  {
+    parameter: 'sort-config',
+    explain: '排序配置项',
+    type: '—', optionalValue: '—', defaultValue: '—',
+    children: [
+      {
+        parameter: 'orders',
+        explain: '自定义轮转顺序',
+        type: 'string[]', optionalValue: 'asc, desc, null', defaultValue: '[asc, desc, null]',
+      },
+      {
+        parameter: 'default-sort',
+        explain: '默认的排序列的 field和顺序。它的field属性指定默认的排序的列,order指定默认排序的顺序',
+        type: 'Object', optionalValue: 'order: asc, desc', defaultValue: '',
+      },
+      {
+        parameter: 'sort-method',
+        explain: '全局排序方法，当触发排序时会调用该函数 Function({ data, column, property, order }) 返回排序后的列表',
+        type: 'Function', optionalValue: '—', defaultValue: '—',
+      },
+      {
+        parameter: 'trigger',
+        explain: '触发方式',
+        type: 'string', optionalValue: 'default（点击按钮触发）, cell（点击表头触发）', defaultValue: 'default',
+      },
+      {
+        parameter: 'showIcon',
+        explain: '是否显示列头排序图标',
+        type: 'boolean', optionalValue: '-', defaultValue: 'true',
+      },
+      {
+        parameter: 'iconAsc',
+        explain: '自定义升序的图标, 可以是iconfont图标库',
+        type: 'string', optionalValue: '-', defaultValue: '-',
+      },
+      {
+        parameter: 'iconDesc',
+        explain: '自定义降序的图标, 可以是iconfont图标库',
+        type: 'string', optionalValue: '-', defaultValue: '-',
+      }
+    ]
+  },
     {
       parameter: 'rules',
       explain: '校验规则配置项',
@@ -564,17 +596,17 @@ export const methodsData = [
     {
         methodsName: 'reloadData',
         explain: '加载数据并清除所有状态（对于表格数据需要重载、局部递增的场景中可能会用到）',
-        parameter: 'data'
+        parameter: 'data 返回一个Promise'
     },
     {
         methodsName: 'loadData',
         explain: '加载数据（对于表格数据需要重载、局部递增场景下可能会用到）',
-        parameter: 'data'
+        parameter: 'data 返回一个Promise'
     },
     {
         methodsName: 'updateData',
         explain: '手动处理数据（对于手动更改了排序、筛选...等条件后需要重新处理数据时可能会用到）',
-        parameter: '—'
+        parameter: '— 返回一个Promise'
     },
     {
         methodsName: 'tableExample',
@@ -783,5 +815,10 @@ export const methodsData = [
     methodsName: 'getTableData',
     explain: '获取当前表格的数据（完整的全量表体数据、处理条件之后的全量表体数据、当前渲染中的表体数据、当前渲染中的表尾数据）',
     parameter: '{fullData, visibleData, tableData, footerData}'
+  },
+  {
+    methodsName: 'getColumnByField',
+    explain: '根据列的字段名获取列',
+    parameter: 'field: string'
   }
 ]
