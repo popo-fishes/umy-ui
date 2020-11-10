@@ -6,6 +6,9 @@
     style="margin-top: 20px;"
     ref="plTable"
     :data="tableData"
+    moveDownIcon="el-icon-caret-bottom"
+    moveUpIcon="el-icon-caret-top"
+    :showDialogIcon="true"
     height=500
     field-title="u-table选择显示字段"
     :field-sort="true"

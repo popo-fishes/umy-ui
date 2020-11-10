@@ -5,6 +5,7 @@
     <p>
       首先你得设置dialog-data侧滑弹窗的数据，你不知道数据格式可以看api哦， 然后你可以设置field-sort（当前你可以不设置，默认就为true），就可以拖动字段上下移动排序啦，记住不是拖动表格行，是侧滑弹窗里面的字段名。
     </p>
+    <p>首先你拖动字段就可以排序，还有一种方式呢就是开启右边的上下移动按钮进行排序，上下移动按钮可以自定义图标，可以是iconfont字体</p>
     <p>
       然后你设置完上面的属性，表格绑定个ref属性，最后你现在就差一个方法来触动弹窗打开啦。你可以点击按钮啊或者什么（随便你），然后调用方法plDialogOpens就可以啦！
     </p>
@@ -17,6 +18,9 @@
         style="margin-top: 20px;"
         ref="plTable"
         :data="tableData"
+        moveDownIcon="el-icon-caret-bottom"
+        moveUpIcon="el-icon-caret-top"
+        :showDialogIcon="true"
         height=500
         field-title="u-table选择显示字段"
         :field-sort="true"

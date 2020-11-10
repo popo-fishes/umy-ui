@@ -222,57 +222,6 @@ export const data = [
         type: 'Number', optionalValue: '—', defaultValue: '60',
     },
     {
-        parameter: 'tree-config',
-        explain: 'u-table大数据树形表格配置项，必去开启row-id 且 开启use-virtual 才有效的配置',
-        type: 'Object', optionalValue: '—', defaultValue: "{ children: 'children', .... }",
-        children: [
-            {
-                parameter: 'children', explain: '树子节点的属性',
-                type: 'String', optionalValue: '—', defaultValue: "children",
-            },
-            {
-                parameter: 'indent', explain: '树节点的缩进',
-                type: 'Number', optionalValue: '—', defaultValue: "20",
-            },
-            {
-                parameter: 'iconOpen', explain: '自定义展开后显示的图标,暂无(没时间做)',
-                type: 'String', optionalValue: '—', defaultValue: "—",
-            },
-            {
-                parameter: 'iconClose', explain: '自定义收起后显示的图标,暂无(没时间做)',
-                type: 'String', optionalValue: '—', defaultValue: "—",
-            },
-           {
-             parameter: 'accordion', explain: '同级节点展示一个,暂无(没时间做)',
-             type: 'Boolean', optionalValue: '—', defaultValue: "false",
-           },
-            {
-                parameter: 'expandAll', explain: '默认展开所有子孙树节点（只会在初始化时被触发一次）',
-                type: 'Boolean', optionalValue: '—', defaultValue: "false",
-            },
-            {
-                parameter: 'trigger', explain: '触发方式  default（点击按钮触发）, cell（点击单元格触发）, row（点击行触发）',
-                type: 'String', optionalValue: '—', defaultValue: "default",
-            },
-            {
-                parameter: 'expandRowKeys', explain: '默认展开指定树节点（只会在初始化时被触发一次，需要有 row-key属性值的字段）',
-                type: "Array", optionalValue: '—', defaultValue: "—",
-            },
-            {
-              parameter: 'hasChildren', explain: '标识是否存在子节点，从而控制是否允许被点击',
-              type: "string", optionalValue: '—', defaultValue: "hasChildren",
-            },
-            {
-              parameter: 'lazy', explain: '是否使用懒加载（启用后只有指定 hasChild 的节点才允许被点击）',
-              type: "Boolean", optionalValue: '—', defaultValue: "false",
-            },
-            {
-              parameter: 'load', explain: '加载子节点数据的函数，lazy 为 true 时生效，函数第二个参数返回子节点',
-              type: "Function", optionalValue: '—', defaultValue: "Function(row, resolve)",
-            }
-        ]
-    },
-    {
         parameter: 'excess-rows',
         explain: '可视区域上方和下方额外渲染的行数，行数越多表格接替渲染效果越好，但越耗性能',
         type: 'Number', optionalValue: '—', defaultValue: '3',
@@ -307,6 +256,57 @@ export const data = [
         explain: '美化表格，修改了样式',
         type: 'Boolean', optionalValue: '—', defaultValue: 'false',
     },
+   {
+    parameter: 'tree-config',
+    explain: 'u-table大数据树形表格配置项，必去开启row-id 且 开启use-virtual 才有效的配置',
+    type: 'Object', optionalValue: '—', defaultValue: "{ children: 'children', .... }",
+    children: [
+      {
+        parameter: 'children', explain: '树子节点的属性',
+        type: 'String', optionalValue: '—', defaultValue: "children",
+      },
+      {
+        parameter: 'indent', explain: '树节点的缩进',
+        type: 'Number', optionalValue: '—', defaultValue: "20",
+      },
+      {
+        parameter: 'iconOpen', explain: '自定义展开后显示的图标,暂无(没时间做)',
+        type: 'String', optionalValue: '—', defaultValue: "—",
+      },
+      {
+        parameter: 'iconClose', explain: '自定义收起后显示的图标,暂无(没时间做)',
+        type: 'String', optionalValue: '—', defaultValue: "—",
+      },
+      {
+        parameter: 'accordion', explain: '同级节点展示一个,暂无(没时间做)',
+        type: 'Boolean', optionalValue: '—', defaultValue: "false",
+      },
+      {
+        parameter: 'expandAll', explain: '默认展开所有子孙树节点（只会在初始化时被触发一次）',
+        type: 'Boolean', optionalValue: '—', defaultValue: "false",
+      },
+      {
+        parameter: 'trigger', explain: '触发方式  default（点击按钮触发）, cell（点击单元格触发）, row（点击行触发）',
+        type: 'String', optionalValue: '—', defaultValue: "default",
+      },
+      {
+        parameter: 'expandRowKeys', explain: '默认展开指定树节点（只会在初始化时被触发一次，需要有 row-key属性值的字段）',
+        type: "Array", optionalValue: '—', defaultValue: "—",
+      },
+      {
+        parameter: 'hasChildren', explain: '标识是否存在子节点，从而控制是否允许被点击',
+        type: "string", optionalValue: '—', defaultValue: "hasChildren",
+      },
+      {
+        parameter: 'lazy', explain: '是否使用懒加载（启用后只有指定 hasChild 的节点才允许被点击）',
+        type: "Boolean", optionalValue: '—', defaultValue: "false",
+      },
+      {
+        parameter: 'load', explain: '加载子节点数据的函数，lazy 为 true 时生效，函数第二个参数返回子节点',
+        type: "Function", optionalValue: '—', defaultValue: "Function(row, resolve)",
+      }
+    ]
+  },
 ]
 /**
  * Table Events（表格事件）
@@ -539,5 +539,10 @@ export const methodsData = [
       methodsName: 'partRowSelections',
       explain: '用于u-table虚拟多选表格，切换选中状态,适用于选中很多，取消很多',
       parameter: 'rows, state: boolean'
-    }
+    },
+    {
+      methodsName: 'getCheckboxRecords',
+      explain: '用于u-table，获取复选框已选中的行',
+      parameter: 'selection'
+    },
 ]

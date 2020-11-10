@@ -4,6 +4,7 @@
       <div class="title-pl" @click="linkNav('/')">umy-ui</div>
       <aplayer-mc v-model="checked"/>
       <div class="nav-pl">
+        <div class="moshi" v-if="releaseShow()" style="color: red">umy-ui发布新版本啦！！！</div>
         <div class="moshi"><el-checkbox v-model="checked">设置播放器模式: mini</el-checkbox></div>
         <div class="search-box">
           <el-input
@@ -48,6 +49,7 @@
   </div>
 </template>
 <script>
+  import moment from 'moment'
   import versionData from '../utils/version'
   import aplayerMc from '../components/aplayer-mc'
   // 一级固定
@@ -70,7 +72,8 @@
           }
         ],
         versionData: versionData,
-        checked: false,
+        checked: true,
+        timeText: '2020-11-10' // 文档最新发布日期
       }
     },
     components: {aplayerMc},
@@ -82,6 +85,9 @@
         return this.$store.state.componentActive
       }
     },
+    mounted () {
+      this.releaseShow()
+    },
     methods: {
       linkNav (val) {
         if (val) {
@@ -89,6 +95,14 @@
             path: val
           })
         }
+      },
+      releaseShow () {
+        let threeDaysLater = moment(this.timeText).add(3, 'days').format('YYYY-MM-DD')
+        let currentTime = moment().format('YYYY-MM-DD')
+        let timeStamp1 =  moment(threeDaysLater).valueOf()
+        let timeStamp2 =  moment(currentTime).valueOf()
+        // 如果当前时间小于，文档发布时间加上3天的时间，就不显示那个最新版不版本提示
+        return timeStamp2 < timeStamp1
       }
     },
     watch: {

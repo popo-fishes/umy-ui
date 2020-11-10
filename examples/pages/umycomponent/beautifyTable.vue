@@ -3,6 +3,7 @@
     <h3>美化表格(变好看一点)</h3>
     <p>使用inverse-current-row ? 必须开启highlight-current-row: 是否需要反选高亮当前行（当点击行默认为选中，必须点击其他行才能取消选中，这是element的原则，所以我改变了它。那么是否需要点击行选中，再次点击当前选中行就取消呢，请设置这个属性吧）</p>
     <p>当`u-table`元素中注入`data`对象数组后，开启beautifyTable属性，开启 header-drag-style（这个主要是让拖动列的线变化），表格会变好看点啦。</p>
+    <p>在列上写上borderLine为false那么代表当前列不显示拖动的图标，然后你还可以加上resizable为false表示不可以拖动，这样就可以让最后一列不可拖动！</p>
     <u-table
       :data="tableData"
       beautifyTable
@@ -22,6 +23,8 @@
       </u-table-column>
       <u-table-column
         prop="age"
+        :borderLine="false"
+        :resizable="false"
         label="年龄">
       </u-table-column>
     </u-table>

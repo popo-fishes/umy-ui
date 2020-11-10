@@ -975,8 +975,8 @@
     }
     .aplayer {
         position: fixed !important;
-        left: 250px;
-        top: 60px;
+        left: 350px;
+        top: 20px;
         z-index: 10000;
     }
 </style>

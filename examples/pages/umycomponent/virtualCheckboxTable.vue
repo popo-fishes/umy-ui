@@ -39,6 +39,7 @@
         <el-button @click="partRowSelections(true)">选中前面500条</el-button>
         <el-button @click="partRowSelections(false)">取消前面选中的500条</el-button>
         <el-button @click="toggleSelection()">取消选择</el-button>
+        <el-button @click="getCheckboxRecords()">获取选中的行</el-button>
       </div>
     </div>
     <div v-html="md" style="margin-top: 30px" class="width100"></div>
@@ -126,6 +127,10 @@
           this.$refs.plTable.clearSelection();
         }
       },
+      // 获取复选框选中的行
+      getCheckboxRecords () {
+        console.log(this.$refs.plTable.getCheckboxRecords())
+      }
     }
   }
 </script>

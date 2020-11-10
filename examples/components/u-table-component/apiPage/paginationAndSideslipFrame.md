@@ -27,7 +27,9 @@
 | field-title  | 弹框的标题 | String | '选择显示字段' |
 | amend-btn-icon  | 修改字段名按钮的图标字体 (必须是iconfont字体) | String | 'el-icon-edit' |
 | field-sort | 显示字段，是否可以拖动行进行排序 |  Boolean | true |
-
+| showDialogIcon | 字段是否显示上移下移的按钮，默认拖动字段就可以排序，但是有时候也就需要显示按钮的方式进行点击排序。| Boolean |  true |
+| moveDownIcon | 下移按钮的图标 | String |  -  |
+| moveUpIcon |  上移按钮的图标 | String |  -  |
 
 ### Field Events（筛选字段侧滑弹窗的事件）
 
@@ -36,6 +38,7 @@
 | amend-field  | 修改单个字段按钮点击事件 |  row, index |
 | show-field  | 确认按钮点击事件,获取当前的需要显示的字段 |  当前的字段数组 |
 | reset  | 重置按钮点击事件 |  当前的字段数组 |
+| handle-field | 上移下移按钮的事件 | name, index |
 
 
 ### Field Methods（筛选字段侧滑弹窗的的方法）

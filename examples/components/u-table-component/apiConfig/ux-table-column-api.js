@@ -98,11 +98,6 @@ export const data = [
         type: 'Function', optionalValue: '—', defaultValue: '—',
     },
     {
-        parameter: 'seq-method',
-        explain: '只对 type=index 有效，自定义索引方法 Function({row, rowIndex, column, columnIndex})',
-        type: 'Function', optionalValue: '—', defaultValue: '—',
-    },
-    {
         parameter: 'sortable',
         explain: '是否允许列排序',
         type: 'boolean', optionalValue: '—', defaultValue: 'false',

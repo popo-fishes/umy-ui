@@ -19,6 +19,8 @@
       </u-table-column>
       <u-table-column
         prop="age"
+        :borderLine="false"
+        :resizable="false"
         label="年龄">
       </u-table-column>
     </u-table>

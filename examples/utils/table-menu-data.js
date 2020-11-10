@@ -53,7 +53,8 @@ export default [
             {title: '手动触发', url: 'manualTrigger'},
             {title: '插入行', url: 'InsertRow'},
             {title: '输入框全部显示', url: 'showAll'},
-            {title: '表格校验', url: 'tableRules'}
+            {title: '表格校验', url: 'tableRules'},
+            {title: '键盘导航', url: 'keyboard'}
         ]
     },
     {

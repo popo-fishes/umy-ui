@@ -355,6 +355,72 @@ export const data = [
     ]
     },
   {
+    parameter: 'index-config',
+    explain: '序号配置项',
+    type: '—', optionalValue: '—', defaultValue: '—',
+    children: [
+      {
+        parameter: 'seqMethod',
+        explain: '自定义序号的方法 Function({ row, rowIndex, column, columnIndex }) 返回处理后的值',
+        type: 'Function', optionalValue: '—', defaultValue: '—',
+      },
+    ]
+  },
+  {
+    parameter: 'keyboard-config',
+    explain: '按键配置项',
+    type: '—', optionalValue: '—', defaultValue: '—',
+    children: [
+      {
+        parameter: 'isArrow',
+        explain: '开启方向键功能',
+        type: 'bolean', optionalValue: '—', defaultValue: 'false',
+      },
+      {
+        parameter: 'isDel',
+        explain: '开启删除键功能',
+        type: 'bolean', optionalValue: '—', defaultValue: 'false',
+      },
+      {
+        parameter: 'isEnter',
+        explain: '开启回车键功能',
+        type: 'bolean', optionalValue: '—', defaultValue: 'false',
+      },
+      {
+        parameter: 'isTab',
+        explain: '开启 Tab 键功能',
+        type: 'bolean', optionalValue: '—', defaultValue: 'false',
+      },
+      {
+        parameter: 'isEdit',
+        explain: '开启任意键进入编辑（功能键除外）',
+        type: 'bolean', optionalValue: '—', defaultValue: 'false',
+      },
+      {
+        parameter: 'enterToTab',
+        explain: '是否将回车键行为改成 Tab 键行为',
+        type: 'bolean', optionalValue: '—', defaultValue: 'false',
+      },
+      {
+        parameter: 'editMethod',
+        explain: '只对 isEdit=true 有效，用于重写选中编辑处理逻辑，该函数 Function({ row, rowIndex, column, columnIndex }) 可以返回 false 来阻止默认行为',
+        type: 'Function', optionalValue: '—', defaultValue: '-',
+      }
+    ]
+  },
+  {
+    parameter: 'mouse-config',
+    explain: '鼠标配置项',
+    type: '—', optionalValue: '—', defaultValue: '—',
+    children: [
+      {
+        parameter: 'selected',
+        explain: '开启单元格选中功能（只对 edit-config={mode: "cell"} 有效）',
+        type: 'bolean', optionalValue: '—', defaultValue: 'false',
+      }
+    ]
+  },
+  {
     parameter: 'sort-config',
     explain: '排序配置项',
     type: '—', optionalValue: '—', defaultValue: '—',
@@ -520,7 +586,7 @@ export const eventsData = [
     },
     {
         eventName: 'filter-change',
-        explain: '当表格的筛选条件发生变化的时候会触发该事件，参数的值是一个对象，对象的 key 是 column 的 columnKey，对应的 value 为用户选择的筛选条件的数组。',
+        explain: '当表格的筛选条件发生变化的时候会触发该事件',
         parameter: '{ column, property, values, datas, filters, $event }'
     },
     {
@@ -533,6 +599,21 @@ export const eventsData = [
         explain: '只对 edit-config 配置时有效，单元格被激活编辑时会触发该事件',
         parameter: '{ row, rowIndex, $rowIndex, column, columnIndex, $columnIndex }'
     },
+  {
+    eventName: 'edit-disabled',
+    explain: '只对 edit-config 配置时有效，当单元格激活时如果是禁用状态时会触发该事件',
+    parameter: '{ row, rowIndex, $rowIndex, column, columnIndex, $columnIndex }'
+  },
+  {
+    eventName: 'keydown',
+    explain: '当表格被激活且键盘被按下时会触发的事件',
+    parameter: '{ $event }'
+  },
+  {
+    eventName: 'edit-currently-active',
+    explain: '当前被激活的单元格',
+    parameter: '{row, column, cell}'
+  }
 ]
 /**
  * ux-grid Methods（表格方法）
@@ -552,11 +633,6 @@ export const methodsData = [
         methodsName: 'clearSelection',
         explain: '用于表格多选，清空用户的选择',
         parameter: '—'
-    },
-    {
-        methodsName: 'toggleRowSelection',
-        explain: '用于表格多选，切换某一行的选中状态。obj如果使用了第二个参数，则是设置这一行选中与否（selected 为 true 则选中）',
-        parameter: 'rows 格式: [{  row: row, selected: true || false }]'
     },
     {
         methodsName: 'toggleRowSelection',
@@ -820,5 +896,10 @@ export const methodsData = [
     methodsName: 'getColumnByField',
     explain: '根据列的字段名获取列',
     parameter: 'field: string'
+  },
+  {
+    methodsName: 'getRowById(rowid)',
+    explain: '根据行的唯一主键获取行',
+    parameter: 'rowid: string'
   }
 ]
