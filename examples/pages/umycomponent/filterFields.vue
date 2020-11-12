@@ -70,6 +70,29 @@
           </template>
         </u-table-column>
       </u-table>
+        <p style="padding: 20px 0;">ux-grid打开</p>
+     <ux-grid
+            :data="tableData"
+            beautifyTable
+            ref="plxTable"
+            height="500"
+            moveDownIcon="el-icon-caret-bottom"
+            moveUpIcon="el-icon-caret-top"
+            field-title="ux-grid选择显示字段"
+            :field-sort="true"
+            :dialog-data="dialogData"
+            :checkbox-config="{highlight: true}">
+        <ux-table-column type="checkbox" width="50" resizable fixed="left"></ux-table-column>
+        <ux-table-column field="date" resizable title="Date"></ux-table-column>
+        <ux-table-column
+            fixed="right"
+            title="操作"
+            width="160">
+            <template slot="header" slot-scope="scope">
+                <div>操作<span style="margin-left: 10px;color:red" @click="openDialog2">点我试试看</span></div>
+            </template>
+          </ux-table-column>
+      </ux-grid>
     </div>
     <div v-html="md" style="margin-top: 30px" class="width100"></div>
   </div>
@@ -89,6 +112,9 @@
       },
       openDialog () {
         this.$refs.plTable.plDialogOpens()
+      },
+      openDialog2 () {
+        this.$refs.plxTable.plDialogOpens()
       }
     },
     data() {

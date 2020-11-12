@@ -159,6 +159,11 @@ export const data = [
         type: 'String', optionalValue: '—', defaultValue: '_XID',
     },
     {
+        parameter: 'beautify-table',
+        explain: '美化表格，修改了样式',
+        type: 'Boolean', optionalValue: '—', defaultValue: 'false',
+    },
+    {
         parameter: 'checkbox-config',
         explain: '复选框配置项',
         type: '—', optionalValue: '—', defaultValue: '—',

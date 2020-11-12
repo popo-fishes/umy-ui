@@ -24,6 +24,19 @@
         label="年龄">
       </u-table-column>
     </u-table>
+    <ux-grid
+          :data="tableData"
+          beautifyTable
+          ref="plxTree"
+          height="300"
+          :checkbox-config="{highlight: true}">
+      <ux-table-column type="checkbox" width="50" resizable fixed="left"></ux-table-column>
+      <ux-table-column field="name" resizable title="Name" width="200"></ux-table-column>
+      <ux-table-column field="size" resizable title="Size" width="200"></ux-table-column>
+      <ux-table-column field="type" resizable title="Type" width="200"></ux-table-column>
+      <ux-table-column field="date" resizable title="Date" width="200"></ux-table-column>
+      <ux-table-column field="name" title="Name"></ux-table-column>
+  </ux-grid>
   </template>
 
   <script>
