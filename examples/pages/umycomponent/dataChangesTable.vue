@@ -20,6 +20,7 @@
         ref="plTable"
         :max-height="height"
         use-virtual
+        stripe
         @table-body-scroll="tableScroll"
         :data-changes-scroll-top="radio === 1"
         :row-height="rowHeight"

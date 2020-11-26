@@ -6,6 +6,7 @@
     <p>（注意：不给height或者不给maxheight，又或者给的是0，use-virtual直接会关闭）。 树且不能用，不能展开 。</p>
     <p>虚拟树形表格不支持表格存在 selection 复选框, 关于treeConfig配置呢 看文档吧。</p>
     <p>`data`对象数组后，大量数据不建议使用双向绑定的 data 属性（vue 监听会大数据会短暂的卡顿），建议使用 reloadData 函数,请看表格方法</p>
+    <p>（注意：你可以使用iconClose，iconOpen做自定义展开收起图标）</p>
     <div>
       <p style="margin: 20px 0;">
         <el-button @click="$refs.plTreeTable.toggleTreeExpansion(treeData[0])">切换第一个</el-button>
@@ -20,7 +21,11 @@
         beautify-table
         header-drag-style
         :height="height"
-        :treeConfig="{children: 'children', expandAll: false}"
+        :treeConfig="{
+          children: 'children',
+         expandAll: false,
+         iconClose: 'el-icon-folder-add',
+         iconOpen: 'el-icon-folder-remove'}"
         @toggle-tree-expand="toggleTreeExpand"
         use-virtual
         row-id="id"

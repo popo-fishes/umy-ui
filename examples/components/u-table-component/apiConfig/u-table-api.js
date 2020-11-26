@@ -270,12 +270,17 @@ export const data = [
         type: 'Number', optionalValue: '—', defaultValue: "20",
       },
       {
-        parameter: 'iconOpen', explain: '自定义展开后显示的图标,暂无(没时间做)',
+        parameter: 'iconOpen', explain: '自定义展开后显示的图标 iconfont图标',
         type: 'String', optionalValue: '—', defaultValue: "—",
       },
       {
-        parameter: 'iconClose', explain: '自定义收起后显示的图标,暂无(没时间做)',
+        parameter: 'iconClose', explain: '自定义收起后显示的图标 iconfont图标',
         type: 'String', optionalValue: '—', defaultValue: "—",
+      },
+      {
+        parameter: 'iconLoaded',
+        explain: '自定义懒加载中显示的图标 iconfont图标',
+        type: 'string', optionalValue: '—', defaultValue: '—',
       },
       {
         parameter: 'accordion', explain: '同级节点展示一个,暂无(没时间做)',
@@ -290,7 +295,7 @@ export const data = [
         type: 'String', optionalValue: '—', defaultValue: "default",
       },
       {
-        parameter: 'expandRowKeys', explain: '默认展开指定树节点（只会在初始化时被触发一次，需要有 row-key属性值的字段）',
+        parameter: 'expandRowKeys', explain: '默认展开指定树节点（只会在初始化时被触发一次，需要有 row-id属性值的字段）',
         type: "Array", optionalValue: '—', defaultValue: "—",
       },
       {

@@ -102,6 +102,7 @@
         let timeStamp1 =  moment(threeDaysLater).valueOf()
         let timeStamp2 =  moment(currentTime).valueOf()
         // 如果当前时间小于，文档发布时间加上3天的时间，就不显示那个最新版不版本提示
+        console.log(timeStamp2 < timeStamp1)
         return timeStamp2 < timeStamp1
       }
     },

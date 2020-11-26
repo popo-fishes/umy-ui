@@ -7,6 +7,7 @@
     <p>（注：启用纵向虚拟后不支持动态行高，如果要支持动态行高，将虚拟滚动关闭即可）。</p>
     <p>（如果想滚动表格到某个位置你可以调用pagingScrollTopLeft方法。参数可以看文档api哦）。</p>
     <p>当`u-table`元素中注入`data`对象数组后，添加use-virtual属性开启虚拟，同时设置row-height行高(它有默认值，请看文档)，同时必须给定height，或者max-height。</p>
+    <p>注意：row-height不是去为了设置表格行高，它只是为了表格里面计算某些东西。如果你需要改变你的行高，你需要去写css改变td的高度即可！即可参考row-height的api描述</p>
     <div>
       <p style="margin: 20px 0;">
         <el-button @click="setHei(400)">设置高度为400</el-button>

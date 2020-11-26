@@ -14,7 +14,11 @@
           beautify-table
           header-drag-style
           :height="height"
-          :treeConfig="{children: 'children', expandAll: false}"
+          :treeConfig="{
+   children: 'children',
+   iconClose: 'el-icon-folder-add',
+   iconOpen: 'el-icon-folder-remove',
+   expandAll: false}"
           @toggle-tree-expand="toggleTreeExpand"
           use-virtual
           row-id="id"
