@@ -2,10 +2,10 @@
   <div class="layoutIndexBox card-box" ref="cardBox">
     <div class="navbar width100">
       <div class="title-pl" @click="linkNav('/')">umy-ui</div>
-      <aplayer-mc v-model="checked"/>
+<!--      <aplayer-mc v-model="checked"/>-->
       <div class="nav-pl">
         <div class="moshi" v-if="releaseShow()" style="color: red">umy-ui发布新版本啦！！！</div>
-        <div class="moshi"><el-checkbox v-model="checked">设置播放器模式: mini</el-checkbox></div>
+<!--        <div class="moshi"><el-checkbox v-model="checked">设置播放器模式: mini</el-checkbox></div>-->
         <div class="search-box">
           <el-input
             placeholder="搜索文档关键字"
@@ -51,7 +51,7 @@
 <script>
   import moment from 'moment'
   import versionData from '../utils/version'
-  import aplayerMc from '../components/aplayer-mc'
+  // import aplayerMc from '../components/aplayer-mc'
   // 一级固定
   export default {
     data () {
@@ -76,7 +76,6 @@
         timeText: '2020-11-10' // 文档最新发布日期
       }
     },
-    components: {aplayerMc},
     computed:{
       activeUrl () {
         return this.$store.state.url

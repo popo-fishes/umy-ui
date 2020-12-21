@@ -8723,10 +8723,10 @@ uglify-js@^3.5.1:
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.12.0.tgz#b943f129275c41d435eb54b643bbffee71dccf57"
   integrity sha512-8lBMSkFZuAK7gGF8LswsXmir8eX8d2AAMOnxSDWjKBx/fBR6MypQjs78m6ML9zQVp1/hD4TBdfeMZMC7nW1TAA==
 
-umy-table@^1.1.6:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/umy-table/-/umy-table-1.1.7.tgz#0dbdd7fdd07e8fa26072a810f73279dab5d7fd5e"
-  integrity sha512-JO7WXSYMAudLjK7HPh0uqjMn/wNuIfMYyl2U3bA8Ht/dY/uI43vY32yI8vkKUHwxaLAdsQ6ozKcMdBz9r9H4hQ==
+umy-table@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/umy-table/-/umy-table-1.1.8.tgz#d1d7ad433d0e7276be88dddb4a186ea98c26a2d6"
+  integrity sha512-yqPMFwZ6MUNqI73KamsNKBTbHRA7VuVZDEWobaySghtf4n/s7INuTNQoADB/ROVK57WOXr99Xpnol0aMqGlASA==
   dependencies:
     async-validator "~1.8.1"
     deepmerge "^1.2.0"
