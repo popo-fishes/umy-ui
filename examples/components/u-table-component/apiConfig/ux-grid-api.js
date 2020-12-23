@@ -486,6 +486,11 @@ export const data = [
           parameter: 'message',
           explain: '校验提示内容',
           type: 'string', optionalValue: '—', defaultValue: '—',
+        },
+        {
+          parameter: 'trigger',
+          explain: '触发校验方式（如果为空，则为常规校验方式； 如果指定触发方式，则只会在匹配情况下进行校验）',
+          type: 'string', optionalValue: 'blur,change', defaultValue: '—',
         }
       ]
     },
