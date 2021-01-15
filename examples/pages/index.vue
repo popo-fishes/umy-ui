@@ -72,7 +72,8 @@
       <h4>表格数据多了就渲染慢</h4>
       <h4>表格数据多了就卡顿</h4>
     </div>
-    <p style="padding: 100px 0 30px 0;text-align: center;color: #606266;font-size: 14px">Copyright 2020 UmyUi | 蜀ICP备2020025971号</p>
+    <p style="padding: 100px 0 30px 0;text-align: center;color: #606266;font-size: 14px">Copyright 2020 UmyUi |
+      <a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" style="color: #606266;">蜀ICP备2020025971号-1</a></p>
   </div>
 </template>
 

@@ -20,7 +20,7 @@
     "element-ui": "^2.13.0",
     "umy-table": "^1.1.8",
     "mavon-editor": "^2.9.0",
-    "moment":"^2.24.0",
+    "moment": "^2.24.0",
     "nuxt": "^2.4.0",
     "vue-property-decorator": "^8.1.1"
   },
