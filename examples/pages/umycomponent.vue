@@ -55,6 +55,17 @@
           <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
         </span>
       </el-dialog>
+      <el-dialog
+        title="提示"
+        :visible.sync="tishi"
+        width="30%"
+        :before-close="() => tishi = false">
+        <span>二群已经被封了，建议有问题加3群：127993351</span>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="tishi = false">取 消</el-button>
+          <el-button type="primary" @click="tishi = false">确 定</el-button>
+        </span>
+      </el-dialog>
     </div>
 </template>
 
@@ -66,6 +77,7 @@
         name: "umycomponent",
         data () {
             return {
+                tishi: true,
                 dialogVisible: false,
                 basics: '/umycomponent/',
                 // show代表默认展开与否
