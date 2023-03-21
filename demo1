@@ -1,0 +1,203 @@
+<ux-grid
+          ref="plxTable"
+          :height="height"
+          :checkboxConfig="{checkMethod: selectable, highlight: true}"
+          @selection-change="handleSelectionChange"
+          @table-body-scroll="scroll"
+          show-header-overflow="tooltip"
+          field-title="列表设置"
+          :field-sort="true"
+          :dialog-data="dialogData"
+          @show-field="getCurrentColums"
+          :border="true">
+          <ux-table-column v-if="checked" type="checkbox" width="55" align="center"  fixed="left"></ux-table-column>
+          <ux-table-column type="index" width="100" fixed="left"></ux-table-column>
+          <ux-table-column
+                 v-for="item in columns"
+                 :key="item.id"
+                 :resizable="item.resizable"
+                 :field="item.field"
+                 :title="item.title"
+                 :sortable="item.sortable"
+                 :width="item.width"
+                 :fixed="item.fixed">
+         </ux-table-column>
+         <ux-table-column
+               fixed="right"
+               label="操作"
+               width="150">
+                <template slot="header" slot-scope="scope">
+                     <div>操作<span style="margin-left: 10px;color:red" @click="openDialog">点我试试看</span></div>
+                </template>
+               <template slot-scope="scope">
+                 <el-button type="text" size="small" >查看</el-button>
+                 <el-button type="text" size="small" @click.stop="doOpenUpdate(scope.row)">编辑</el-button>
+               </template>
+             </ux-table-column>
+        </ux-grid>
+        
+        
+   上面是模板部分，
+   
+   js部分如下：  getCurrentColums是最重要的方法
+   
+ 
+var Main = {
+    data(){
+        return{
+            tableData:[],
+            columns:[
+      { title: '姓名', field: 'name', id: 0, width: 200 },
+      { title:"性别", field: 'sex', id: 1, width: 100 },
+      { title:"年龄", field: 'age', id: 2, width: 100},
+      { title:"地址", field: 'address', id: 3, width: 200},
+  ],
+dialogData: [
+     { name:"名字",  id: 0, label: 'name',state: true, disabled: false},
+      { name:"性别", id: 1, label: 'sex',  state: true, disabled: false},
+      { name:"年龄", id: 2, label: 'age' , state: true, disabled: false},
+      { name:"地址", id: 3, label: 'address', disabled: false},
+],
+            sexList:[],
+            height: 500,
+            rowHeight: 55, 
+            checked: true,
+            dialogVisible: false,
+            editCustomer: {},
+            multipleSelection: [],
+            dialogVisible_submit: false,
+            refKey: 0,
+            flag: true
+        }
+    },
+    mounted(){
+        for(let i=1;i<=200;i++){
+            // if(i<200){
+            //     let param ={
+            //         label: i,
+            //         value: i
+            //     }
+            //     this.sexList.push(param);
+            // }
+            let props ={
+                id: i,
+                name: '测试'+i,
+                sex: Math.round(Math.random()),
+                age: Math.floor(Math.random()*100+1),
+                address:'北京市天安门天安门随机大道'+i
+            }
+            this.tableData.push(props);
+        }
+        console.log("this.tableData:",this.tableData)
+        this.$nextTick(()=>{
+            this.$refs.plxTable.reloadData(this.tableData);
+        })
+
+    },
+    methods:{
+        scrollBottom () {
+            this.$refs.plTable.scrollBottom()
+         },
+         pagingScrollTopLeft (val) {
+            this.$refs.plTable.pagingScrollTopLeft(val, 0)
+        },
+        formatSex(row, column, cellValue) {
+            return cellValue>0?'男':'女'
+        },
+        selectable (row, index) {
+                //暂时都为真
+              return true
+          },
+        doOpenUpdate(row){
+            this.editCustomer = Object.assign({},row);
+            this.dialogVisible = true;
+        },
+        doUpdate(){
+            console.log('this.editCustomer.id:',this.editCustomer.id)
+            this.tableData.map(m => {
+                if(m.id === this.editCustomer.id){
+                    // this.editCustomer;
+                    m.name = this.editCustomer.name;
+                    m.sex = this.editCustomer.sex;
+                    m.age = this.editCustomer.age;
+                    m.address = this.editCustomer.address;
+
+                }
+                return m;
+            })
+            console.log('tableData',this.tableData)
+            this.dialogVisible = false;
+            this.$refs.plxTable.loadData(this.tableData);
+        },
+        doSubmit(){
+            this.dialogVisible_submit = true;
+        },
+        handleClose(done){
+            done();
+        },
+        doDelete(event, row,index){
+            // 这里的index 是由 scope.$index 传过来的，但是貌似有问题
+            console.log('row:',event,row,index)
+            // this.multipleSelection.splice(index,1);
+            let index_delete =  this.multipleSelection.findIndex(f=> f.id ===  row.id);
+            console.log('index_delete:',index_delete)
+            // 取消勾选
+            this.$nextTick(() => {
+                //此处的.$refs.singleTable是重点 但是莫名会导致第一次删除一次性删除下一个下标的数据
+                // this.$refs.plxTable.$refs.toggleRowSelection(this.multipleSelection[index_delete], false);
+                // 2023-03-13 partRowSelections方法自带删除该下标的数据
+                this.$refs.plxTable.partRowSelections([this.multipleSelection[index_delete]], false);
+                // this.multipleSelection.splice( index_delete, 1 );
+                // this.$refs.plxTable.doLayout();
+                console.log('this.multipleSelection:',this.multipleSelection.length)
+            })
+        },
+        handleSelectionChange(val) {
+            this.multipleSelection = val;
+        },
+        changeTick(){
+            this.checked =! this.checked;
+            // 清除所选中的数据
+            if(this.checked === false){
+                this.$refs.u_table.clearSelection();
+            }
+        },
+        scroll ({scrollTop, scrollLeft}) {
+            this.scrollTop = scrollTop
+        },
+        openDialog () {
+            this.$refs.plxTable.plDialogOpens()
+          },
+        getCurrentColums(rows){
+         // fullColumn: 全量表头列   tableColumn: 当前渲染中的表头列
+      const { fullColumn, tableColumn } = this.$refs.plxTable.getTableColumn()
+      // 过滤筛选后的列
+      const data = rows.filter(item => item.state)
+      // 结果列数组
+      const order = []
+      // 获取没有在columns数组配置的列，前面的列
+      order.push(fullColumn[0], fullColumn[1])
+      // 获取没有在columns数组配置的列，后面的列
+      const afterColumn = fullColumn[fullColumn.length - 1]
+      // 组件v-for的总列
+      const allColumn = [...this.columns]
+      // 遍历找出列
+      data.forEach(items => {
+        const _l = allColumn.find(item => item.field == items.label)
+        if (_l) {
+          order.push(_l)
+        }
+      })
+      // 吧最后一个列放进去
+      order.push(afterColumn)
+      // 重新加载列
+      this.$refs.plxTable.loadColumn(order)
+      console.log(JSON.stringify(order))
+        },
+
+    }
+}
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#app')
+
+        
