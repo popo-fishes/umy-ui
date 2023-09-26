@@ -77,7 +77,7 @@
         name: "umycomponent",
         data () {
             return {
-                tishi: true,
+                tishi: false,
                 dialogVisible: false,
                 basics: '/umycomponent/',
                 // show代表默认展开与否

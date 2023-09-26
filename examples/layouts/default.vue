@@ -22,9 +22,8 @@
             <el-popover v-if="item.name === '交流'" placement="top-start" width="200" trigger="hover">
               <div class="jiaoliu">
                 <p>QQ交流1群: 675286117已满员</p>
-                <p>QQ交流2群: 939125115新群未满员(可能封群了)</p>
                 <br/>
-                <p>QQ交流3群: 127993351</p>
+                <p>QQ交流2群: 893342082 (新群)</p>
               </div>
               <span slot="reference">{{ item.name }}</span>
             </el-popover>
