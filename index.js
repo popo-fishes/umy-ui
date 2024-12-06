@@ -9,6 +9,7 @@ import UxTableColumn from './packages/ux-table-column/index.js';
 import locale from 'umy-ui/tools/locale';
 // 引入u-table的locale
 import tableLocale from 'umy-table/lib/locale'
+import { interceptor } from "umy-table";
 
 const components = [
   Button,
@@ -41,7 +42,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '1.1.6',
+  version: '1.1.7',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -50,5 +51,6 @@ export default {
   UTableColumn,
   UTable,
   UxGrid,
-  UxTableColumn
+  UxTableColumn,
+  interceptor
 };

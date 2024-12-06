@@ -1,19 +1,24 @@
-var Components = require('../components.json');
-var fs = require('fs');
-var render = require('json-templater/string');
-var uppercamelcase = require('uppercamelcase');
-var path = require('path');
-var endOfLine = require('os').EOL;
+/*
+ * @Date: 2024-12-06 09:11:17
+ * @Description: Modify here please
+ */
+var Components = require("../components.json");
+var fs = require("fs");
+var render = require("json-templater/string");
+var uppercamelcase = require("uppercamelcase");
+var path = require("path");
+var endOfLine = require("os").EOL;
 
-var OUTPUT_PATH = path.join(__dirname, '../index.js')
-var INSTALL_COMPONENT_TEMPLATE = '  {{name}}';
-var IMPORT_TEMPLATE = 'import {{name}} from \'./packages/{{package}}/index.js\';'
+var OUTPUT_PATH = path.join(__dirname, "../index.js");
+var INSTALL_COMPONENT_TEMPLATE = "  {{name}}";
+var IMPORT_TEMPLATE = "import {{name}} from './packages/{{package}}/index.js';";
 var MAIN_TEMPLATE = `/* 自动生成者来着 './build/build-entry.js' */
 
 {{include}}
 import locale from 'umy-ui/tools/locale';
 // 引入u-table的locale
 import tableLocale from 'umy-table/lib/locale'
+import { interceptor } from "umy-table";
 
 const components = [
 {{install}}
@@ -45,7 +50,8 @@ export default {
   locale: locale.use,
   i18n: locale.i18n,
   install,
-{{list}}
+{{list}},
+  interceptor
 };
 `;
 
@@ -55,27 +61,30 @@ var includeComponentTemplate = [];
 var installTemplate = [];
 var listTemplate = [];
 
-ComponentNames.forEach(name => {
+ComponentNames.forEach((name) => {
   var componentName = uppercamelcase(name);
 
-  includeComponentTemplate.push(render(IMPORT_TEMPLATE, {
-    name: componentName,
-    package: name
-  }));
-  installTemplate.push(render(INSTALL_COMPONENT_TEMPLATE, {
+  includeComponentTemplate.push(
+    render(IMPORT_TEMPLATE, {
       name: componentName,
-      component: name
-  }));
-  if (componentName !== 'Loading') listTemplate.push(`  ${componentName}`);
+      package: name,
+    })
+  );
+  installTemplate.push(
+    render(INSTALL_COMPONENT_TEMPLATE, {
+      name: componentName,
+      component: name,
+    })
+  );
+  if (componentName !== "Loading") listTemplate.push(`  ${componentName}`);
 });
 
 var template = render(MAIN_TEMPLATE, {
   include: includeComponentTemplate.join(endOfLine),
-  install: installTemplate.join(',' + endOfLine),
-  version: process.env.VERSION || require('../package.json').version,
-  list: listTemplate.join(',' + endOfLine)
+  install: installTemplate.join("," + endOfLine),
+  version: process.env.VERSION || require("../package.json").version,
+  list: listTemplate.join("," + endOfLine),
 });
 
 fs.writeFileSync(OUTPUT_PATH, template);
-console.log('[build entry] DONE:', OUTPUT_PATH);
-
+console.log("[build entry] DONE:", OUTPUT_PATH);
