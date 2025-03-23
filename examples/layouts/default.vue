@@ -41,7 +41,7 @@
             </el-dropdown>
           </div>
           <div class="nav-item">
-            <a href="https://github.com/u-leo/umy-ui" target="_blank">GitHub</a>
+            <a href="https://github.com/popo-fishes/umy-ui" target="_blank">GitHub</a>
           </div>
         </div>
       </div>
