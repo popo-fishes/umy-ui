@@ -10,9 +10,9 @@
 
 > QQ 交流 2 群: 893342082（新群）
 
-[umy-ui 官网](http://www.umyui.com)
+[umy-ui 官网](http://43.136.119.145/)
 
-[umy-ui 文档](http://www.umyui.com)
+[umy-ui 文档](http://43.136.119.145/)
 
 ## 安装
 
