@@ -31,9 +31,9 @@
               trigger="hover"
             >
               <div class="jiaoliu">
-                <p>QQ交流1群: 675286117已满员</p>
+                <p>之前的群都被封了</p>
                 <br />
-                <p>QQ交流2群: 893342082 (新群)</p>
+                <p>QQ交流群: 1087351634 (新群)</p>
               </div>
               <span slot="reference">{{ item.name }}</span>
             </el-popover>
